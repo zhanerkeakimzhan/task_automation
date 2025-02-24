@@ -61,6 +61,17 @@ function showModal() {
 // Закрытие модального окна
 document.getElementById("close-modal").addEventListener("click", function() {
     document.getElementById("modal").style.display = "none";
+    // Отправить запрос на сервер для удаления папки
+    // Отправить запрос на сервер для удаления папки
+    fetch('/delete_folder', {
+        method: 'POST',  // Используем POST для безопасной отправки
+    }).then(response => response.json())
+      .then(data => {
+          console.log('Folder deleted successfully:', data);
+      })
+      .catch(error => {
+          console.error('Error deleting folder:', error);
+      });
     location.reload();
 });
 

@@ -3,12 +3,13 @@ import os
 import uuid
 import pandas as pd
 import shutil
-from functions import check_ted_policy
+from functions import check_ted_policy, parse_csv
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 user_id = str(uuid.uuid4())[:8]
+file_path = f'uploads/user_{user_id}'
 
 @app.route('/')
 def home():
@@ -21,8 +22,6 @@ def submit():
     selected_ids = data.get('selected', [])
 
     response_data = {}
-
-    file_path = f'uploads/user_{user_id}'
 
     for cube_id in selected_ids:
         if cube_id == "checkTed":
@@ -38,16 +37,25 @@ def submit():
         else:
             response_data[cube_id] = f"Ответ для {cube_id}"
     
-    # Удаляем папку после обработки
-    shutil.rmtree(file_path, ignore_errors=True)
-    
     return jsonify({"message": "Данные обработаны", "responses": response_data})
 
 @app.route('/download_csv', methods=['GET'])
 def download_csv():
-    file_path = create_excel_file()
-    return send_file(file_path, as_attachment=True, download_name="data.xlsx",
+    # file_path = create_excel_file()
+    csv_file_path, excel_file_path = parse_csv(file_path, "Halyk inc. Распределение", 'identification')
+    return send_file(excel_file_path, as_attachment=True, download_name="identification.xlsx",
                      mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+
+@app.route('/delete_folder', methods=['POST'])
+def delete_folder():
+    if os.path.exists(file_path):
+        try:
+            shutil.rmtree(file_path, ignore_errors=True)
+            return jsonify({"status": "success", "message": "Folder deleted"}), 200
+        except Exception as e:
+            return jsonify({"status": "error", "message": str(e)}), 500
+    else:
+        return jsonify({"status": "error", "message": "Folder not found"}), 404
 
 
 def create_excel_file():
@@ -100,4 +108,5 @@ def upload_files():
 
 
 if __name__ == '__main__':
+    # app.run(host='0.0.0.0', port=5000)
     app.run(debug=True)  # Запуск сервера

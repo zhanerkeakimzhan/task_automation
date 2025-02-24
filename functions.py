@@ -1,5 +1,11 @@
 import yaml
 import os
+import yaml
+import csv
+import re
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
 
 
 def check_ted_policy(project_path):
@@ -146,3 +152,199 @@ def check_ted_policy(project_path):
         response.append("Все интенты прописаны для каждого utter в stories.")
     
     return response
+
+
+def parse_csv(project_path, sheet_name, file_name):
+    # google connect
+    SPREADSHEET_ID = "1cz9TYk75cRrWkrV44zOOpQbr-kmltqmsye4n5xBMwxs"
+    SHEET_NAME = sheet_name #название таблицы
+    JSON_KEY_FILE = "service_account.json"
+
+    def load_google_sheets_data():
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds = ServiceAccountCredentials.from_json_keyfile_name(JSON_KEY_FILE, scope)
+        client = gspread.authorize(creds)
+        sheet = client.open_by_key(SPREADSHEET_ID).worksheet(SHEET_NAME)
+        return sheet.get_all_records()
+
+    with open(f'{project_path}/domain.yml', 'r', encoding='utf-8') as file:
+        domain_data = yaml.safe_load(file)
+
+    gs_data = load_google_sheets_data()
+    responses = domain_data.get('responses', {})
+    csv_data = {}
+    pattern = re.compile(r'\s*([\d.]+)\s*\|\s*(.*)')  # для извлечения Priority и Text
+
+    for intent_name, intent_responses in domain_data.get('responses', {}).items():
+        for response in intent_responses:
+            if 'text' in response:
+                text_value = response['text']
+                match = pattern.match(text_value)
+                if match:
+                    priority = int(float(match.group(1)))
+                    text = match.group(2).strip()
+
+                    # Инициализация временных списков
+                    temp_audio_ru_f = []
+                    temp_audio_ru_m = []
+                    temp_audio_kz_f = []
+                    temp_audio_kz_m = []
+
+                    for row in gs_data:
+                        # Получаем тексты и аудио из Google Sheets
+                        text_ru = row.get("Рус.яз.", "").strip()
+                        text_kz = row.get("Каз.яз", "").strip()
+                        audio_ru_f = row.get("AudioRU_F", "").strip()
+                        audio_ru_m = row.get("AudioRU_M", "").strip()
+                        audio_kz_f = row.get("AudioKZ_F", "").strip()
+                        audio_kz_m = row.get("AudioKZ_M", "").strip()
+
+                        # Обработка русского текста
+                        if text == text_ru:
+                            # Добавляем оригинальные RU аудио
+                            if audio_ru_f and "_F_R" in audio_ru_f and audio_ru_f not in temp_audio_ru_f:
+                                temp_audio_ru_f.append(audio_ru_f)
+                                # Дублируем в KZ_F с заменой окончания
+                                kz_f_audio = audio_ru_f.replace("_F_R", "_F_K")
+                                if kz_f_audio not in temp_audio_kz_f:
+                                    temp_audio_kz_f.append(kz_f_audio)
+
+                            if audio_ru_m and "_M_R" in audio_ru_m and audio_ru_m not in temp_audio_ru_m:
+                                temp_audio_ru_m.append(audio_ru_m)
+                                # Дублируем в KZ_M с заменой окончания
+                                kz_m_audio = audio_ru_m.replace("_M_R", "_M_K")
+                                if kz_m_audio not in temp_audio_kz_m:
+                                    temp_audio_kz_m.append(kz_m_audio)
+
+                        # Обработка казахского текста
+                        elif text == text_kz:
+                            # Добавляем оригинальные KZ аудио
+                            if audio_kz_f and "_F_K" in audio_kz_f and audio_kz_f not in temp_audio_kz_f:
+                                temp_audio_kz_f.append(audio_kz_f)
+                                # Дублируем в RU_F с заменой окончания
+                                ru_f_audio = audio_kz_f.replace("_F_K", "_F_R")
+                                if ru_f_audio not in temp_audio_ru_f:
+                                    temp_audio_ru_f.append(ru_f_audio)
+
+                            if audio_kz_m and "_M_K" in audio_kz_m and audio_kz_m not in temp_audio_kz_m:
+                                temp_audio_kz_m.append(audio_kz_m)
+                                # Дублируем в RU_M с заменой окончания
+                                ru_m_audio = audio_kz_m.replace("_M_K", "_M_R")
+                                if ru_m_audio not in temp_audio_ru_m:
+                                    temp_audio_ru_m.append(ru_m_audio)
+
+                    # Обновляем или создаем запись в csv_data
+                    if intent_name in csv_data:
+                        entry = csv_data[intent_name]
+                        entry['Text'] += ' / ' + text
+                        # Объединяем аудио списки
+                        for field, values in [
+                            ('AudioRU_F', temp_audio_ru_f),
+                            ('AudioRU_M', temp_audio_ru_m),
+                            ('AudioKZ_F', temp_audio_kz_f),
+                            ('AudioKZ_M', temp_audio_kz_m)
+                        ]:
+                            existing = entry[field]
+                            for item in values:
+                                if item not in existing:
+                                    existing.append(item)
+                    else:
+                        csv_data[intent_name] = {
+                            'Priority': priority,
+                            'NameIntent': intent_name,
+                            'Text': text,
+                            'AudioRU_F': temp_audio_ru_f.copy(),
+                            'AudioRU_M': temp_audio_ru_m.copy(),
+                            'AudioKZ_F': temp_audio_kz_f.copy(),
+                            'AudioKZ_M': temp_audio_kz_m.copy(),
+                            'Intents': '-',
+                            'Next_audio': '',
+                            'Duration_waiting': '',
+                            'Finished': '',
+                            'Language': "AudioRU" if intent_name.endswith("RU") else "AudioKZ" if intent_name.endswith("KZ") else "AudioRU",
+                            'BadRU_M': '',
+                            'BadKZ_M': '',
+                            'BadRU_F': '',
+                            'BadKZ_F': '',
+                            'OtherRU_M': '',
+                            'OtherKZ_M': '',
+                            'OtherRU_F': '',
+                            'OtherKZ_F': '',
+                            'Interrupting_strategy': '',
+                            'reload_template': 'no',
+                            'repeat': '3',
+                            'asr': 'default_kz'
+                        }
+
+    # Преобразование списков в строки
+    csv_rows = list(csv_data.values())
+    for entry in csv_rows:
+        for field in ['AudioRU_F', 'AudioRU_M', 'AudioKZ_F', 'AudioKZ_M']:
+            entry[field] = ', '.join(entry[field]) if entry[field] else '-'
+
+    csv_rows = list(csv_data.values())
+    csv_columns = [
+        'Priority', 'NameIntent', 'Text', 'AudioRU_M', 'AudioKZ_M', 'AudioRU_F',
+        'AudioKZ_F', 'Intents', 'Next_audio', 'Duration_waiting', 'Finished',
+        'Language', 'BadRU_M', 'BadKZ_M', 'BadRU_F', 'BadKZ_F', 'OtherRU_M',
+        'OtherKZ_M', 'OtherRU_F', 'OtherKZ_F', 'Interrupting_strategy',
+        'reload_template', 'repeat', 'asr'
+    ]
+    # Словарь доп интентов для заполение столбца next_audio
+    SPECIAL_NEXT_AUDIO = {"utter_scoreRU", "utter_scoreKZ", "utter_interruptingKZ", "utter_interruptingRU", "utter_justOperatorKZ", "utter_justOperatorRU"}
+
+    # Словарь исключений
+    EXCLUDED_INTENTS = {"utter_justOperatorRU", "utter_justOperatorKZ"}
+
+    # Словарь доп интентов для заполнения столбца Finished
+    FINISHED_INTENTS = {"utter_goodByeRU", "utter_goodByeKZ", "utter_error_stateRU", "utter_error_stateKZ"}
+
+    # Словарь доп интентов для заполнения столбца Interrupting Strategy
+    IS_INTENTS = {"utter_error_stateRU", "utter_error_stateKZ", "utter_repeat_questionRU", "utter_repeat_questionKZ"}
+
+    # для получения последнего приоритета
+    max_priority = max(entry['Priority'] for entry in csv_rows)
+
+    for entry in csv_rows:
+        # Для заполнения столбца next_audio
+        if entry['Priority'] == 0:
+            entry['Next_audio'] = max_priority
+        elif 'q' in entry['NameIntent']:
+            entry['Next_audio'] = max_priority
+        elif entry['NameIntent'] in SPECIAL_NEXT_AUDIO:
+            entry['Next_audio'] = max_priority
+        else:
+            entry['Next_audio'] = '-'
+        # Для заполнения столбца Duration_waiting
+        if entry['Next_audio'] == max_priority:
+            entry['Duration_waiting'] = 6
+        else:
+            entry['Duration_waiting'] = 0
+        # Меняем название операторов на !Oper
+        if "operator" in entry['NameIntent'].lower() and entry['NameIntent'] not in EXCLUDED_INTENTS:
+            entry['NameIntent'] = "!Oper"
+        # Для заполнения столбца Finished
+        if entry['NameIntent'] in FINISHED_INTENTS:
+            entry['Finished'] = 'OK'
+        else:
+            entry['Finished'] = '-'
+        # Для заполнения столбца Interrupting Strategy
+        if entry['NameIntent'] == "!Oper":
+            entry['Interrupting_strategy'] = "NoOp"
+        elif entry['NameIntent'] in IS_INTENTS:
+            entry['Interrupting_strategy'] = "NoOp"
+        else:
+            entry['Interrupting_strategy'] = "ASR"
+
+    # Создание CSV
+    with open(f'{project_path}/{file_name}.csv', 'w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+        writer.writeheader()
+        writer.writerows(csv_rows)
+        csv_file_path = f'{project_path}/{file_name}.csv'
+    
+    df = pd.DataFrame(csv_rows)
+    df.to_excel(f'{project_path}/{file_name}.xlsx', index=False)
+    excel_file_path = f'{project_path}/{file_name}.xlsx'
+
+    return csv_file_path, excel_file_path
