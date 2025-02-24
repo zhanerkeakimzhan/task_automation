@@ -1,0 +1,62 @@
+version: "3.1"
+
+stories:
+
+- story: all to action
+  steps:
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: transferLimit
+      - intent: cancelTransfer
+      - intent: getTransfer
+      - intent: makeTransfer
+      - intent: toHalykBank
+      - intent: toOtherBank
+      - intent: western
+      - intent: swift
+      - intent: korona
+      - intent: international
+      - intent: cardNumber
+      - intent: phoneNumber
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: registration
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+    - action: action_slotSet
+    - action: action_q0

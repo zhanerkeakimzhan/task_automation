@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>some code</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+    </head>
+    <body>
+        <div class="title-container">
+            <h1>Автоматизируй всё – работай меньше, живи больше!🚀</h1>
+        </div>
+        
+        <div class="container">
+            <div class="cube" id="checkTed" onclick="toggleSelection(this)">проверка на TedPolicy</div>
+            <div class="cube" id="testList" onclick="toggleSelection(this)">создать таблицу для тестирование</div>
+            <div class="cube" id="csv" onclick="toggleSelection(this)">создать csv</div>
+            <!-- <div class="cube" id="audioProcessing" onclick="toggleSelection(this)">обработка аудио</div> -->
+        </div>
+
+        <div class="container">
+            <h4 style="margin: 0;">Выберите папку с проектом:</h4>
+            <input type="file" id="folderInput" webkitdirectory directory multiple>
+        </div>
+
+        <p id="fileInfo"></p>
+
+        <button id="continueBtn" disabled>Продолжить</button>
+
+        <!-- Модальное окно -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <div id="modal-content"></div>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>

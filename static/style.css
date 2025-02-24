@@ -1,0 +1,88 @@
+body {
+    text-align: center; /* Выравниваем текст по центру */
+    background-color: #175880;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+.title-container {
+    margin: 100px 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между кубиками */
+    margin-bottom: 30px;
+}
+
+.cube {
+    width: 200px;
+    height: 250px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #175880;
+    font-weight: bold;
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cube:hover {
+    background-color: #e0e0e0;
+}
+
+.cube.selected {
+    background-color: #AFD2E8;
+    /* border: 2px solid #AFD2E8; */
+}
+
+button:disabled {
+    pointer-events: none; /* Отключает наведение */
+    opacity: 0.5; /* Делает кнопку полупрозрачной */
+}
+
+button:not(:disabled) {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid #175880;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:not(:disabled):hover {
+    background-color: #AFD2E8;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    color: #175880;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
