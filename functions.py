@@ -147,7 +147,7 @@ def check_ted_policy(project_path):
     if missing_intents_in_stories:
         response.append("Пропущенные интенты для следующих utters в stories:")
         for missing in missing_intents_in_stories:
-            response.append(f"intent: {missing}")
+            response.append(f"utter_q0: {missing}")
     else:
         response.append("Все интенты прописаны для каждого utter в stories.")
     
@@ -155,6 +155,7 @@ def check_ted_policy(project_path):
 
 
 def parse_csv(project_path, sheet_name, file_name):
+    print(f'file_path: {project_path}, sheet_name: {sheet_name}, file_name: {file_name}')
     # google connect
     SPREADSHEET_ID = "1cz9TYk75cRrWkrV44zOOpQbr-kmltqmsye4n5xBMwxs"
     SHEET_NAME = sheet_name #название таблицы
@@ -192,11 +193,11 @@ def parse_csv(project_path, sheet_name, file_name):
 
                     for row in gs_data:
                         # Получаем тексты и аудио из Google Sheets
-                        text_ru = row.get("Рус.яз.", "").strip()
-                        text_kz = row.get("Каз.яз", "").strip()
+                        text_ru = row.get("текст на русском языке", "").strip()
+                        text_kz = row.get("текст на казахском языке", "").strip()
                         audio_ru_f = row.get("AudioRU_F", "").strip()
-                        audio_ru_m = row.get("AudioRU_M", "").strip()
                         audio_kz_f = row.get("AudioKZ_F", "").strip()
+                        audio_ru_m = row.get("AudioRU_M", "").strip()
                         audio_kz_m = row.get("AudioKZ_M", "").strip()
 
                         # Обработка русского текста

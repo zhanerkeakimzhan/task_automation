@@ -13,8 +13,8 @@
         
         <div class="container">
             <div class="cube" id="checkTed" onclick="toggleSelection(this)">проверка на TedPolicy</div>
-            <!-- <div class="cube" id="testList" onclick="toggleSelection(this)">создать таблицу для тестирование</div> -->
             <div class="cube" id="csv" onclick="toggleSelection(this)">создать csv</div>
+            <div class="cube" id="testList" onclick="toggleSelection(this)">создать таблицу для тестирование</div>
             <!-- <div class="cube" id="audioProcessing" onclick="toggleSelection(this)">обработка аудио</div> -->
         </div>
 
@@ -24,6 +24,11 @@
         </div>
 
         <p id="fileInfo"></p>
+
+        <div class="container" id="csvInputContainer" style="display: none; align-items: center; gap: 10px;">
+            <h4 style="margin: 0; white-space: nowrap;">Введите название листа для заполнения столбца аудио:</h4>
+            <input type="text" id="csvInput" placeholder="введите">
+        </div>        
 
         <button id="continueBtn" disabled>Продолжить</button>
 
