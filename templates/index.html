@@ -12,6 +12,7 @@
         </div>
         
         <div class="container">
+            <div class="cube" id="preRecording" onclick="toggleSelection(this)">создать таблицу предзаписи</div>
             <div class="cube" id="checkTed" onclick="toggleSelection(this)">проверка на TedPolicy</div>
             <div class="cube" id="csv" onclick="toggleSelection(this)">создать csv</div>
             <div class="cube" id="testList" onclick="toggleSelection(this)">создать таблицу для тестирование</div>
@@ -28,7 +29,21 @@
         <div class="container" id="csvInputContainer" style="display: none; align-items: center; gap: 10px;">
             <h4 style="margin: 0; white-space: nowrap;">Введите название листа для заполнения столбца аудио:</h4>
             <input type="text" id="csvInput" placeholder="введите">
-        </div>        
+        </div>
+
+        <div class="container" id="testListInputContainer" style="display: none; align-items: center; gap: 10px;">
+            <h4 style="margin: 0; white-space: nowrap;">Введите название листа для тестирование:</h4>
+            <input type="text" id="testListInput" placeholder="введите">
+        </div>
+
+        <div class="container" id="preRecordingInputContainer" style="display: none; align-items: center; gap: 10px;">
+            <button id="maleButton" class="gender-button" data-gender="M">Муж</button>
+            <button id="femaleButton" class="gender-button" data-gender="F">Жен</button>
+            <h4 style="margin: 0; white-space: nowrap;">Дайте название для аудио:</h4>
+            <input type="text" id="preRecordingInput" placeholder="введите">
+            <h4 style="margin: 0; white-space: nowrap;">Введите название листа для листа предзаписи:</h4>
+            <input type="text" id="preRecordingListName" placeholder="введите">
+        </div>
 
         <button id="continueBtn" disabled>Продолжить</button>
 
@@ -37,6 +52,14 @@
             <div class="modal-content">
                 <span id="close-modal" class="close">&times;</span>
                 <div id="modal-content"></div>
+            </div>
+        </div>
+
+        <!-- Модальное окно тест лист перезапись или новое название -->
+        <div id="modal-test-list" class="modal">
+            <div class="modal-content">
+                <span id="close-modal-test-list" class="close">&times;</span>
+                <div id="modal-content-test-list"></div>
             </div>
         </div>
 

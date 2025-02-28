@@ -3,7 +3,7 @@ import os
 import uuid
 import pandas as pd
 import shutil
-from functions import check_ted_policy, parse_csv
+from functions import check_ted_policy, parse_csv, check_test_list_name, test_list, prerecording_list
 from urllib.parse import unquote
 
 
@@ -14,6 +14,7 @@ user_id = str(uuid.uuid4())[:8]
 file_path = f'uploads/user_{user_id}'
 folder_name = 'default'
 csvInput = ''
+testListInput = ''
 
 @app.route('/')
 def home():
@@ -23,10 +24,16 @@ def home():
 @app.route('/submit', methods=['POST'])
 def submit():
     global csvInput
+    global testListInput
     data = request.get_json()
     selected_ids = data.get('selected', [])
     csvInput = data.get('csvInput', '')
+    testListInput = data.get('testListInput', '')
+    preRecordingInput = data.get('preRecordingInput', '')
+    preRecordingListName = data.get('preRecordingListName', '')
+    selectedGender = data.get('selectedGender', '')
     response_data = {}
+    print(selected_ids)
 
     for cube_id in selected_ids:
         if cube_id == "checkTed":
@@ -34,16 +41,30 @@ def submit():
             # response_data[cube_id] = "Проверка на TedPolicy завершена."
             print(response)
             response_data[cube_id] = response
+        elif cube_id == "preRecording":
+            domain = f'{file_path}/domain.yml'
+            response = prerecording_list(domain, selectedGender, preRecordingInput, preRecordingListName)
+            print(response)
+            response_data[cube_id] = response
         elif cube_id == "testList":
-            response_data[cube_id] = "Создана таблица для тестирования."
+            response = test_list()
+            print(response)
+            response_data[cube_id] = response
         elif cube_id == "csv":
             response_data[cube_id] = "Ваши файлы: <a href='/download_csv' target='_blank' class='download-link'>Скачать CSV</a> <a href='/download_excel' target='_blank' class='download-link'>Скачать Excel</a>"
         elif cube_id == "audioProcessing":
             response_data[cube_id] = "Обработка аудио выполнена."
         else:
             response_data[cube_id] = f"Ответ для {cube_id}"
-    
+    print(response_data)
     return jsonify({"message": "Данные обработаны", "responses": response_data})
+
+@app.route('/check_list_exists')
+def check_list_exists():
+    name = request.args.get('name')
+    exists = check_test_list_name(name)  # Функция, которая проверяет существование листа
+    return jsonify({"exists": exists})
+
 
 @app.route('/download_csv', methods=['GET'])
 def download_csv():
@@ -55,12 +76,14 @@ def download_csv():
     return send_file(csv_file_path, as_attachment=True, download_name=f"{folder_name}.csv",
                      mimetype="text/csv")
 
+
 @app.route('/download_excel', methods=['GET'])
 def download_excel():
     # file_path = create_excel_file()
     csv_file_path, excel_file_path = parse_csv(file_path, csvInput, folder_name)
     return send_file(excel_file_path, as_attachment=True, download_name=f"{folder_name}.xlsx",
                      mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+
 
 @app.route('/delete_folder', methods=['POST'])
 def delete_folder():
@@ -83,7 +106,8 @@ def upload_files():
         "domain": "domain.yml",
         "rules": "data/rules.yml",
         "stories": "data/stories.yml",
-        "nlu": "data/nlu.yml"
+        "nlu": "data/nlu.yml",
+        "actions": "actions/actions.py"
     }
     received_files = {}
 

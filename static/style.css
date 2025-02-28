@@ -86,3 +86,16 @@ button:not(:disabled):hover {
     font-size: 28px;
     cursor: pointer;
 }
+
+.gender-button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.gender-button.selected {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+}

@@ -6,6 +6,7 @@ import re
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
+from collections import OrderedDict
 
 
 def check_ted_policy(project_path):
@@ -349,3 +350,99 @@ def parse_csv(project_path, sheet_name, file_name):
     excel_file_path = f'{project_path}/{file_name}.xlsx'
 
     return csv_file_path, excel_file_path
+
+
+def check_test_list_name(sheet_name):
+    print('Я ТУТ')
+    print(sheet_name)
+    gc = gspread.service_account(filename="service_account.json")
+    SPREADSHEET_ID = "1fzp8Lpz506QeTG4l0iweo_sq_T2j8DXAGRE9p-rVICo"
+    spreadsheet = gc.open_by_key(SPREADSHEET_ID)
+
+    # Получаем список всех листов
+    sheets = spreadsheet.worksheets()
+    sheet_names = [s.title for s in sheets]
+    print(sheet_names)
+
+    if sheet_name in sheet_names:
+        print('лист существует')
+        return True
+    else:
+        return False
+
+
+def test_list():
+    print('дернул test_list')
+    return 'FUCKING TEST LIST, I HATE YOU!!!'
+
+
+def prerecording_list(file_path, gender, default_text, sheet_name):
+    if gender not in ['M', 'F']:
+        raise ValueError("Пол должен быть 'M' или 'F'")
+    #google connect
+    gc = gspread.service_account(filename="service_account.json")
+    SPREADSHEET_ID = "1cz9TYk75cRrWkrV44zOOpQbr-kmltqmsye4n5xBMwxs"
+    spreadsheet = gc.open_by_key(SPREADSHEET_ID)
+
+    try:
+        sheet = spreadsheet.worksheet(sheet_name)
+        print("Лист уже существует, дайте другое название")
+        return
+    except gspread.exceptions.WorksheetNotFound:
+        sheet = spreadsheet.add_worksheet(title=sheet_name, rows="200", cols="5")
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        data = yaml.load(file, Loader=yaml.FullLoader)
+
+    entries = OrderedDict()
+    ordered_keys = []
+    global_index = 1
+    output = []
+
+    # Обработка responses
+    for key in data.get('responses', {}):
+        if key.endswith('KZ'):
+            continue
+
+        base_key = key[:-2] if key.endswith('RU') else key
+
+        cleaned_texts = [
+            item['text'].split('|')[-1].strip()
+            for item in data['responses'][key]
+        ]
+
+        if base_key not in ordered_keys:
+            ordered_keys.append(base_key)
+
+        entries[base_key] = cleaned_texts
+
+    # Генерация таблицы
+    for base_key in ordered_keys:
+        for text in entries.get(base_key, []):
+            audio_fields = (
+                f"{global_index}_{default_text}_{gender}_R",
+                f"{global_index}_{default_text}_{gender}_K"
+            )
+            output.append([base_key, text, '', *audio_fields])
+            global_index += 1
+
+        if re.match(r'^utter_q\d+$', base_key):
+            audio_fields = (
+                f"{global_index}_{default_text}_{gender}_R",
+                f"{global_index}_{default_text}_{gender}_K"
+            )
+            output.append([f"{base_key}_BAD", '', '', *audio_fields])
+            global_index += 1
+
+    headers = [
+        'название уттера',
+        'текст на русском языке',
+        'текст на казахском языке',
+        f'AudioRU_{gender}',
+        f'AudioKZ_{gender}'
+    ]
+
+    values = [headers] + output
+    sheet.update(values=values, range_name=f"A1:E{len(values)}")
+
+    return (f"Данные успешно записаны в лист '{sheet_name}'")
