@@ -47,7 +47,7 @@ def submit():
             print(response)
             response_data[cube_id] = response
         elif cube_id == "testList":
-            response = test_list()
+            response = test_list(file_path, testListInput)
             print(response)
             response_data[cube_id] = response
         elif cube_id == "csv":

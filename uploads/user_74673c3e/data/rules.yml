@@ -1,0 +1,5400 @@
+version: "3.1"
+
+rules:
+
+#q1
+- rule: utter_q1RU
+  steps:
+    - action: utter_q1RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q1
+
+- rule: utter_q1KZ
+  steps:
+    - action: utter_q1KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q1
+
+#q3
+- rule: utter_q3RU
+  steps:
+    - action: utter_q3RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q3
+
+- rule: utter_q3KZ
+  steps:
+    - action: utter_q3KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q3
+
+#q4
+- rule: utter_q4RU
+  steps:
+    - action: utter_q4RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_questions
+
+- rule: utter_q4KZ
+  steps:
+    - action: utter_q4KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_questions
+
+
+#q5
+- rule: utter_q5RU
+  steps:
+    - action: utter_q5RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_questions
+
+- rule: utter_q5KZ
+  steps:
+    - action: utter_q5KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_questions
+
+#q7
+- rule: utter_q7RU
+  steps:
+    - action: utter_q7RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_questions
+
+- rule: utter_q7KZ
+  steps:
+    - action: utter_q7KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_questions
+
+#q8 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q8RU
+    - intent: changeLangKZ
+    - action: action_changelang
+
+- rule: yes
+  steps:
+    - action: utter_q8RU
+    - or:
+      - intent: yes
+      - intent: whereIsCode
+      - intent: didntGetSMS
+    - action: utter_howToProvideCodeRU
+    - action: utter_q9RU
+
+- rule: repeat
+  steps:
+    - action: utter_q8RU
+    - intent: repeat
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q8RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q8RU
+
+- rule: robot
+  steps:
+    - action: utter_q8RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q8RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q8RU
+    - intent: operator
+    - action: action_operator
+
+- rule: codeNumber
+  steps:
+    - action: utter_q8RU
+    - intent: codeNumber
+    - action: action_returnq21
+
+- rule: wait
+  steps:
+    - action: utter_q8RU
+    - intent: wait
+    - action: utter_waitingRU
+    - action: utter_q8RU
+
+- rule: internet / noApplication / no
+  steps:
+    - action: utter_q8RU
+    - or:
+      - intent: internet
+      - intent: noApplication
+      - intent: no
+    - action: utter_requestCardKeywordRU
+    - action: utter_q11RU
+
+- rule: whatIsIdentification
+  steps:
+    - action: utter_q8RU
+    - intent: whatIsIdentification
+    - action: utter_whyNeedCodeRU
+    - action: utter_q8RU
+
+- rule: whatIsCode
+  steps:
+    - action: utter_q8RU
+    - intent: whatIsCode
+    - action: utter_whatIsCodeRU
+    - action: utter_q8RU
+
+- rule: to counter
+  steps:
+    - action: utter_q8RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: busy
+      - intent: knowHow
+      - intent: fraud
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+
+#q8 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q8KZ
+    - intent: changeLangRU
+    - action: action_changelang
+
+- rule: yes
+  steps:
+    - action: utter_q8KZ
+    - or:
+      - intent: yes
+      - intent: whereIsCode
+      - intent: didntGetSMS
+    - action: utter_howToProvideCodeKZ
+    - action: utter_q9KZ
+
+- rule: repeat
+  steps:
+    - action: utter_q8KZ
+    - intent: repeat
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q8KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q8KZ
+
+- rule: robot
+  steps:
+    - action: utter_q8KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q8KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q8KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: codeNumber
+  steps:
+    - action: utter_q8KZ
+    - intent: codeNumber
+    - action: action_returnq21
+
+- rule: wait
+  steps:
+    - action: utter_q8KZ
+    - intent: wait
+    - action: utter_waitingKZ
+    - action: utter_q8KZ
+
+- rule: internet / noApplication / no
+  steps:
+    - action: utter_q8KZ
+    - or:
+      - intent: internet
+      - intent: noApplication
+      - intent: no
+    - action: utter_requestCardKeywordKZ
+    - action: utter_q11KZ
+
+- rule: whatIsIdentification
+  steps:
+    - action: utter_q8KZ
+    - intent: whatIsIdentification
+    - action: utter_whyNeedCodeKZ
+    - action: utter_q8KZ
+
+- rule: whatIsCode
+  steps:
+    - action: utter_q8KZ
+    - intent: whatIsCode
+    - action: utter_whatIsCodeKZ
+    - action: utter_q8KZ
+
+- rule: to counter
+  steps:
+    - action: utter_q8KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: busy
+      - intent: knowHow
+      - intent: fraud
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+
+#q9 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q9RU
+    - intent: changeLangKZ
+    - action: action_changelang
+
+- rule: yes
+  steps:
+    - action: utter_q9RU
+    - intent: yes
+    - action: action_slotset_q10
+
+- rule: repeat
+  steps:
+    - action: utter_q9RU
+    - or:
+      - intent: repeat
+      - intent: didntGetSMS
+      - intent: whatIsCode
+      - intent: whereIsCode
+    - action: utter_howToProvideCodeRU
+    - action: utter_q9RU
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q9RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q9RU
+
+- rule: robot
+  steps:
+    - action: utter_q9RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q9RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q9RU
+    - intent: operator
+    - action: action_operator
+
+- rule: wait
+  steps:
+    - action: utter_q9RU
+    - or:
+      - intent: no
+      - intent: wait
+    - action: action_awaiting
+
+- rule: internet / noApplication
+  steps:
+    - action: utter_q9RU
+    - or:
+      - intent: internet
+      - intent: noApplication
+    - action: utter_requestCardKeywordRU
+    - action: utter_q11RU
+
+- rule: fraud
+  steps:
+    - action: utter_q9RU
+    - intent: fraud
+    - action: utter_explainNeedEgovCodeRU
+    - action: utter_q9RU
+
+- rule: codeNumber
+  steps:
+    - action: utter_q9RU
+    - intent: codeNumber
+    - action: action_returnq21
+
+- rule: whatIsIdentification
+  steps:
+    - action: utter_q9RU
+    - intent: whatIsIdentification
+    - action: utter_whyNeedCodeRU
+    - action: utter_q9RU
+
+- rule: to counter
+  steps:
+    - action: utter_q9RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: busy
+      - intent: knowHow
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_dc_counter
+
+#q9 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q9KZ
+    - intent: changeLangRU
+    - action: action_changelang
+
+- rule: yes
+  steps:
+    - action: utter_q9KZ
+    - intent: yes
+    - action: action_slotset_q10
+
+- rule: repeat
+  steps:
+    - action: utter_q9KZ
+    - or:
+      - intent: repeat
+      - intent: didntGetSMS
+      - intent: whatIsCode
+      - intent: whereIsCode
+    - action: utter_howToProvideCodeKZ
+    - action: utter_q9KZ
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q9KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q9KZ
+
+- rule: robot
+  steps:
+    - action: utter_q9KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q9KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q9KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: wait
+  steps:
+    - action: utter_q9KZ
+    - or:
+      - intent: no
+      - intent: wait
+    - action: action_awaiting
+
+- rule: internet / noApplication
+  steps:
+    - action: utter_q9KZ
+    - or:
+      - intent: internet
+      - intent: noApplication
+    - action: utter_requestCardKeywordKZ
+    - action: utter_q11KZ
+
+- rule: fraud
+  steps:
+    - action: utter_q9KZ
+    - intent: fraud
+    - action: utter_explainNeedEgovCodeKZ
+    - action: utter_q9KZ
+
+- rule: codeNumber
+  steps:
+    - action: utter_q9KZ
+    - intent: codeNumber
+    - action: action_returnq21
+
+- rule: whatIsIdentification
+  steps:
+    - action: utter_q9KZ
+    - intent: whatIsIdentification
+    - action: utter_whyNeedCodeKZ
+    - action: utter_q9KZ
+
+- rule: to counter
+  steps:
+    - action: utter_q9KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: busy
+      - intent: knowHow
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_dc_counter
+
+
+#q10
+- rule: utter_q10RU
+  steps:
+    - action: utter_q10RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q10
+
+- rule: utter_q10KZ
+  steps:
+    - action: utter_q10KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q10
+
+
+#q11 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q11RU
+    - intent: changeLangKZ
+    - action: action_changelang
+
+- rule: yes
+  steps:
+    - action: utter_q11RU
+    - intent: yes
+    - action: utter_q12RU
+
+- rule: no
+  steps:
+    - action: utter_q11RU
+    - intent: no
+    - action: action_slotSetIdentCode
+
+- rule: repeat
+  steps:
+    - action: utter_q11RU
+    - or:
+      - intent: repeat
+      - intent: whereIsCode
+    - action: utter_silenceRU
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q11RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q11RU
+
+- rule: robot
+  steps:
+    - action: utter_q11RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q11RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q11RU
+    - intent: operator
+    - action: action_operator
+
+- rule: dontKnow
+  steps:
+    - action: utter_q11RU
+    - intent: dontKnow
+    - action: action_counterDontKnow
+
+- rule: whatIsIdentification
+  steps:
+    - action: utter_q11RU
+    - intent: whatIsIdentification
+    - action: utter_whyNeedKeywordRU
+    - action: utter_q11RU
+
+- rule: to counter
+  steps:
+    - action: utter_q11RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+
+#q11 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q11KZ
+    - intent: changeLangRU
+    - action: action_changelang
+
+- rule: yes
+  steps:
+    - action: utter_q11KZ
+    - intent: yes
+    - action: utter_q12KZ
+
+- rule: no
+  steps:
+    - action: utter_q11KZ
+    - intent: no
+    - action: action_slotSetIdentCode
+
+- rule: repeat
+  steps:
+    - action: utter_q11KZ
+    - or:
+      - intent: repeat
+      - intent: whereIsCode
+    - action: utter_silenceKZ
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q11KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q11KZ
+
+- rule: robot
+  steps:
+    - action: utter_q11KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q11KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q11KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: dontKnow
+  steps:
+    - action: utter_q11KZ
+    - intent: dontKnow
+    - action: action_counterDontKnow
+
+- rule: whatIsIdentification
+  steps:
+    - action: utter_q11KZ
+    - intent: whatIsIdentification
+    - action: utter_whyNeedKeywordKZ
+    - action: utter_q11KZ
+
+- rule: to counter
+  steps:
+    - action: utter_q11KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+
+#q12
+- rule: utter_q12RU
+  steps:
+    - action: utter_q12RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_checkCodeWord
+
+- rule: utter_q12KZ
+  steps:
+    - action: utter_q12KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_checkCodeWord
+
+#q13 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q13RU
+    - intent: changeLangKZ
+    - action: utter_q13KZ
+
+- rule: yes
+  steps:
+    - action: utter_q13RU
+    - intent: yes
+    - action: action_returnq15
+
+- rule: no
+  steps:
+    - action: utter_q13RU
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: busy
+      - intent: fraud
+      - intent: blockTheCard
+      - intent: bankBrunch
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q13RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q13RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q13RU
+
+- rule: robot
+  steps:
+    - action: utter_q13RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q13RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q13RU
+    - intent: operator
+    - action: action_operator
+
+- rule: whatIsSuspiciousActivity
+  steps:
+    - action: utter_q13RU
+    - intent: whatIsSuspiciousActivity
+    - action: utter_whatIsSuspiciousActivityRU
+    - action: utter_q13RU
+
+- rule: to counter
+  steps:
+    - action: utter_q13RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: wait
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: codeNumber
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q13 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q13KZ
+    - intent: changeLangRU
+    - action: utter_q13RU
+
+- rule: yes
+  steps:
+    - action: utter_q13KZ
+    - intent: yes
+    - action: action_returnq15
+
+- rule: no
+  steps:
+    - action: utter_q13KZ
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: busy
+      - intent: fraud
+      - intent: blockTheCard
+      - intent: bankBrunch
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q13KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q13KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q13KZ
+
+- rule: robot
+  steps:
+    - action: utter_q13KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q13KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q13KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: whatIsSuspiciousActivity
+  steps:
+    - action: utter_q13KZ
+    - intent: whatIsSuspiciousActivity
+    - action: utter_whatIsSuspiciousActivityKZ
+    - action: utter_q13KZ
+
+- rule: to counter
+  steps:
+    - action: utter_q13KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: wait
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: codeNumber
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q15 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q15RU
+    - intent: changeLangKZ
+    - action: utter_q15KZ
+
+- rule: yes
+  steps:
+    - action: utter_q15RU
+    - intent: yes
+    - action: utter_q16RU
+
+- rule: no
+  steps:
+    - action: utter_q15RU
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: bankBrunch
+      - intent: notInAlmaty
+      - intent: unlockIt
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q15RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: action_returnq15
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q15RU
+    - intent: whoIsIt
+    - action: action_slotSetSintez
+    - action: utter_langDetectRU
+    - action: utter_q15RU
+
+- rule: robot
+  steps:
+    - action: utter_q15RU
+    - intent: robot
+    - action: action_slotSetSintez
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q15RU
+    - intent: soundlessly
+    - action: action_slotSetSintez
+    - action: utter_soundLesslyRU
+    - action: utter_q15RU
+
+- rule: operator
+  steps:
+    - action: utter_q15RU
+    - intent: operator
+    - action: action_slotSetSintez
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q15RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q15 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q15KZ
+    - intent: changeLangRU
+    - action: utter_q15RU
+
+- rule: yes
+  steps:
+    - action: utter_q15KZ
+    - intent: yes
+    - action: utter_q16KZ
+
+- rule: no
+  steps:
+    - action: utter_q15KZ
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: bankBrunch
+      - intent: notInAlmaty
+      - intent: unlockIt
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q15KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: action_returnq15
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q15KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q15KZ
+
+- rule: robot
+  steps:
+    - action: utter_q15KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q15KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: utter_q15KZ
+
+- rule: operator
+  steps:
+    - action: utter_q15KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q15KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q14 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q14RU
+    - intent: changeLangKZ
+    - action: utter_q14KZ
+
+- rule: yes
+  steps:
+    - action: utter_q14RU
+    - intent: yes
+    - action: utter_q24RU
+
+- rule: no
+  steps:
+    - action: utter_q14RU
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: childrenWanted
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q14RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: action_returnq14
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q14RU
+    - intent: whoIsIt
+    - action: action_slotSetSintez
+    - action: utter_langDetectRU
+    - action: utter_q14RU
+
+- rule: robot
+  steps:
+    - action: utter_q14RU
+    - intent: robot
+    - action: action_slotSetSintez
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q14RU
+    - intent: soundlessly
+    - action: action_slotSetSintez
+    - action: utter_soundLesslyRU
+    - action: utter_q14RU
+
+- rule: operator
+  steps:
+    - action: utter_q14RU
+    - intent: operator
+    - action: action_slotSetSintez
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q14RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q15 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q14KZ
+    - intent: changeLangRU
+    - action: utter_q14RU
+
+- rule: yes
+  steps:
+    - action: utter_q14KZ
+    - intent: yes
+    - action: utter_q24KZ
+
+- rule: no
+  steps:
+    - action: utter_q14KZ
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: childrenWanted
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q14KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: action_returnq14
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q14KZ
+    - intent: whoIsIt
+    - action: action_slotSetSintez
+    - action: utter_langDetectKZ
+    - action: utter_q14KZ
+
+- rule: robot
+  steps:
+    - action: utter_q14KZ
+    - intent: robot
+    - action: action_slotSetSintez
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q14KZ
+    - intent: soundlessly
+    - action: action_slotSetSintez
+    - action: utter_soundLesslyKZ
+    - action: utter_q14KZ
+
+- rule: operator
+  steps:
+    - action: utter_q14KZ
+    - intent: operator
+    - action: action_slotSetSintez
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q14KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q16 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q16RU
+    - intent: changeLangKZ
+    - action: utter_q16KZ
+
+- rule: no
+  steps:
+    - action: utter_q16RU
+    - intent: no
+    - action: utter_q17RU
+
+- rule: yes
+  steps:
+    - action: utter_q16RU
+    - or:
+      - intent: yes
+      - intent: dontKnow
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q16RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q16RU
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q16RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q16RU
+
+- rule: robot
+  steps:
+    - action: utter_q16RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q16RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: utter_q16RU
+
+- rule: operator
+  steps:
+    - action: utter_q16RU
+    - intent: operator
+    - action: action_operator
+
+- rule: whichMobileOperator
+  steps:
+    - action: utter_q16RU
+    - intent: whichMobileOperator
+    - action: utter_whatIsMobileOperatorRU
+    - action: utter_q16RU
+
+- rule: to counter
+  steps:
+    - action: utter_q16RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q16 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q16KZ
+    - intent: changeLangRU
+    - action: utter_q16RU
+
+- rule: no
+  steps:
+    - action: utter_q16KZ
+    - intent: no
+    - action: utter_q17KZ
+
+- rule: yes
+  steps:
+    - action: utter_q16KZ
+    - or:
+      - intent: yes
+      - intent: dontKnow
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q16KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q16KZ
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q16KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q16KZ
+
+- rule: robot
+  steps:
+    - action: utter_q16KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q16KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: utter_q16KZ
+
+- rule: operator
+  steps:
+    - action: utter_q16KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: whichMobileOperator
+  steps:
+    - action: utter_q16KZ
+    - intent: whichMobileOperator
+    - action: utter_whatIsMobileOperatorKZ
+    - action: utter_q16KZ
+
+- rule: to counter
+  steps:
+    - action: utter_q16KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q17 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q17RU
+    - intent: changeLangKZ
+    - action: utter_q17KZ
+
+- rule: no
+  steps:
+    - action: utter_q17RU
+    - intent: no
+    - action: utter_q18RU
+
+- rule: yes
+  steps:
+    - action: utter_q17RU
+    - or:
+      - intent: yes
+      - intent: dontKnow
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q17RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q17RU
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q17RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q17RU
+
+- rule: robot
+  steps:
+    - action: utter_q17RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q17RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: utter_q17RU
+
+- rule: operator
+  steps:
+    - action: utter_q17RU
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q17RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q17 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q17KZ
+    - intent: changeLangRU
+    - action: utter_q17RU
+
+- rule: no
+  steps:
+    - action: utter_q17KZ
+    - intent: no
+    - action: utter_q18KZ
+
+- rule: yes
+  steps:
+    - action: utter_q17KZ
+    - or:
+      - intent: yes
+      - intent: dontKnow
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q17KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q17KZ
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q17KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q17KZ
+
+- rule: robot
+  steps:
+    - action: utter_q17KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q17KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: utter_q17KZ
+
+- rule: operator
+  steps:
+    - action: utter_q17KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q17KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q18 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q18RU
+    - intent: changeLangKZ
+    - action: utter_q18KZ
+
+- rule: yes
+  steps:
+    - action: utter_q18RU
+    - intent: yes
+    - action: utter_q19RU
+
+- rule: no
+  steps:
+    - action: utter_q18RU
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: didntGetSMS
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q18RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q18RU
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q18RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q18RU
+
+- rule: robot
+  steps:
+    - action: utter_q18RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q18RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: utter_q18RU
+
+- rule: operator
+  steps:
+    - action: utter_q18RU
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q18RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q18 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q18KZ
+    - intent: changeLangRU
+    - action: utter_q18RU
+
+- rule: yes
+  steps:
+    - action: utter_q18KZ
+    - intent: yes
+    - action: utter_q19KZ
+
+- rule: no
+  steps:
+    - action: utter_q18KZ
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: didntGetSMS
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q18KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q18KZ
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q18KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q18KZ
+
+- rule: robot
+  steps:
+    - action: utter_q18KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q18KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: utter_q18KZ
+
+- rule: operator
+  steps:
+    - action: utter_q18KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q18KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q19 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q19RU
+    - intent: changeLangKZ
+    - action: utter_q19KZ
+
+- rule: no
+  steps:
+    - action: utter_q19RU
+    - intent: no
+    - action: utter_q20RU
+
+- rule: yes
+  steps:
+    - action: utter_q19RU
+    - or:
+      - intent: yes
+      - intent: dontKnow
+      - intent: fraud
+      - intent: family
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q19RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q19RU
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q19RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q19RU
+
+- rule: robot
+  steps:
+    - action: utter_q19RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q19RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: utter_q19RU
+
+- rule: operator
+  steps:
+    - action: utter_q19RU
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q19RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q19 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q19KZ
+    - intent: changeLangRU
+    - action: utter_q19RU
+
+- rule: no
+  steps:
+    - action: utter_q19KZ
+    - intent: no
+    - action: utter_q20KZ
+
+- rule: yes
+  steps:
+    - action: utter_q19KZ
+    - or:
+      - intent: yes
+      - intent: dontKnow
+      - intent: fraud
+      - intent: family
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q19KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q19KZ
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q19KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q19KZ
+
+- rule: robot
+  steps:
+    - action: utter_q19KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q19KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: utter_q19KZ
+
+- rule: operator
+  steps:
+    - action: utter_q19KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q19KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q20 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q20RU
+    - intent: changeLangKZ
+    - action: utter_q20KZ
+
+- rule: yes
+  steps:
+    - action: utter_q20RU
+    - intent: yes
+    - action: action_cardActivation
+
+- rule: no
+  steps:
+    - action: utter_q20RU
+    - or:
+      - intent: no
+      - intent: dontKnow
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q20RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q20RU
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q20RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q20RU
+
+- rule: robot
+  steps:
+    - action: utter_q20RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q20RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: utter_q20RU
+
+- rule: operator
+  steps:
+    - action: utter_q20RU
+    - intent: operator
+    - action: action_operator
+
+- rule: whatIsContactlessPayment
+  steps:
+    - action: utter_q20RU
+    - intent: whatIsContactlessPayment
+    - action: utter_whatIsContactlessPaymentRU
+    - action: utter_q20RU
+
+- rule: to counter
+  steps:
+    - action: utter_q20RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q20 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q20KZ
+    - intent: changeLangRU
+    - action: utter_q20RU
+
+- rule: yes
+  steps:
+    - action: utter_q20KZ
+    - intent: yes
+    - action: action_cardActivation
+
+- rule: no
+  steps:
+    - action: utter_q20KZ
+    - or:
+      - intent: no
+      - intent: dontKnow
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q20KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q20KZ
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q20KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q20KZ
+
+- rule: robot
+  steps:
+    - action: utter_q20KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q20KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: utter_q20KZ
+
+- rule: operator
+  steps:
+    - action: utter_q20KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: whatIsContactlessPayment
+  steps:
+    - action: utter_q20KZ
+    - intent: whatIsContactlessPayment
+    - action: utter_whatIsContactlessPaymentKZ
+    - action: utter_q20KZ
+
+- rule: to counter
+  steps:
+    - action: utter_q20KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q21
+- rule: utter_q21RU
+  steps:
+    - action: utter_q21RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_checkDigitalCode
+
+- rule: utter_q21KZ
+  steps:
+    - action: utter_q21KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_checkDigitalCode
+
+#q22
+- rule: utter_q22RU
+  steps:
+    - action: utter_q22RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q22
+
+- rule: utter_q22KZ
+  steps:
+    - action: utter_q22KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q22
+
+#q23
+- rule: utter_q23RU
+  steps:
+    - action: utter_q23RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q23
+
+- rule: utter_q23KZ
+  steps:
+    - action: utter_q23KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q23
+
+#q24 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q24RU
+    - intent: changeLangKZ
+    - action: utter_q24KZ
+
+- rule: no
+  steps:
+    - action: utter_q24RU
+    - intent: no
+    - action: action_cardActivation
+
+- rule: yes
+  steps:
+    - action: utter_q24RU
+    - or:
+      - intent: yes
+      - intent: dontKnow
+      - intent: childrenWanted
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q24RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q24RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q24RU
+
+- rule: robot
+  steps:
+    - action: utter_q24RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q24RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: utter_q24RU
+
+- rule: operator
+  steps:
+    - action: utter_q24RU
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q24RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q24 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q24KZ
+    - intent: changeLangRU
+    - action: utter_q24RU
+
+- rule: no
+  steps:
+    - action: utter_q24KZ
+    - intent: no
+    - action: action_cardActivation
+
+- rule: yes
+  steps:
+    - action: utter_q24KZ
+    - or:
+      - intent: yes
+      - intent: dontKnow
+      - intent: childrenWanted
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q24KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q24KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q24KZ
+
+- rule: robot
+  steps:
+    - action: utter_q24KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q24KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: utter_q24KZ
+
+- rule: operator
+  steps:
+    - action: utter_q24KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: to counter
+  steps:
+    - action: utter_q24KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q25 ru
+- rule: changeLangKZ
+  steps:
+    - action: utter_q25RU
+    - intent: changeLangKZ
+    - action: utter_q25KZ
+
+- rule: yes
+  steps:
+    - action: utter_q25RU
+    - intent: yes
+    - action: action_returnq14
+
+- rule: no
+  steps:
+    - action: utter_q25RU
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: busy
+      - intent: fraud
+      - intent: blockTheCard
+      - intent: bankBrunch
+    - action: utter_toOperatorICantRU
+
+- rule: repeat
+  steps:
+    - action: utter_q25RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q25RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q25RU
+
+- rule: robot
+  steps:
+    - action: utter_q25RU
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q25RU
+    - intent: soundlessly
+    - action: utter_soundLesslyRU
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q25RU
+    - intent: operator
+    - action: action_operator
+
+- rule: whatIsSuspiciousActivity
+  steps:
+    - action: utter_q25RU
+    - intent: whatIsSuspiciousActivity
+    - action: utter_whatIsSuspiciousActivityRU
+    - action: utter_q25RU
+
+- rule: to counter
+  steps:
+    - action: utter_q25RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: wait
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: codeNumber
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#q25 kz
+- rule: changeLangRU
+  steps:
+    - action: utter_q25KZ
+    - intent: changeLangRU
+    - action: utter_q25RU
+
+- rule: yes
+  steps:
+    - action: utter_q25KZ
+    - intent: yes
+    - action: action_returnq14
+
+- rule: no
+  steps:
+    - action: utter_q25KZ
+    - or:
+      - intent: no
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: busy
+      - intent: fraud
+      - intent: blockTheCard
+      - intent: bankBrunch
+    - action: utter_toOperatorICantKZ
+
+- rule: repeat
+  steps:
+    - action: utter_q25KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: action_repeat
+
+- rule: whoIsIt
+  steps:
+    - action: utter_q25KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q25KZ
+
+- rule: robot
+  steps:
+    - action: utter_q25KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: soundlessly
+  steps:
+    - action: utter_q25KZ
+    - intent: soundlessly
+    - action: utter_soundLesslyKZ
+    - action: action_repeat
+
+- rule: operator
+  steps:
+    - action: utter_q25KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: whatIsSuspiciousActivity
+  steps:
+    - action: utter_q25KZ
+    - intent: whatIsSuspiciousActivity
+    - action: utter_whatIsSuspiciousActivityKZ
+    - action: utter_q25KZ
+
+- rule: to counter
+  steps:
+    - action: utter_q25KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: whereIsCode
+      - intent: haveQuestion
+      - intent: wait
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: codeNumber
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counter
+
+#interrupting
+- rule: utter_interruptingRU
+  steps:
+    - action: utter_interruptingRU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q1
+
+- rule: utter_interruptingKZ
+  steps:
+    - action: utter_interruptingKZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q1
+
+#score
+- rule: utter_scoreRU
+  steps:
+    - action: utter_scoreRU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_score
+
+- rule: utter_scoreKZ
+  steps:
+    - action: utter_scoreKZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_score
+
+#q6
+- rule: utter_q6RU
+  steps:
+    - action: utter_q6RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q6
+
+- rule: utter_q6KZ
+  steps:
+    - action: utter_q6KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q6
+
+# repeat_question
+- rule: utter_repeat_questionRU
+  steps:
+    - action: utter_repeat_questionRU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q0
+
+- rule: utter_repeat_questionKZ
+  steps:
+    - action: utter_repeat_questionKZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q0
+
+#q2
+- rule: utter_q2RU
+  steps:
+    - action: utter_q2RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q2
+
+- rule: utter_q2KZ
+  steps:
+    - action: utter_q2KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q2
+
+
+#q26
+- rule: utter_q26RU
+  steps:
+    - action: utter_q26RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q26
+
+- rule: utter_q26KZ
+  steps:
+    - action: utter_q26KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_q26
+
+#qVerint
+- rule: utter_qVerintRU
+  steps:
+    - action: utter_qVerintRU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_infoAfterVerint
+
+- rule: utter_qVerintKZ
+  steps:
+    - action: utter_qVerintKZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whereIsCode
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: later
+      - intent: bankBrunch
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: whatIsIdentification
+      - intent: noApplication
+      - intent: fraud
+      - intent: codeNumber
+      - intent: blockTheCard
+      - intent: whatIsSuspiciousActivity
+      - intent: notInAlmaty
+      - intent: unlockIt
+      - intent: childrenWanted
+      - intent: whichMobileOperator
+      - intent: didntGetSMS
+      - intent: family
+      - intent: whatIsContactlessPayment
+      - intent: whatIsCode
+      - intent: aboutCard
+      - intent: aboutLoans
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_infoAfterVerint
