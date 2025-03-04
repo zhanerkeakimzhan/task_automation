@@ -3,6 +3,7 @@ body {
     background-color: #175880;
     color: #FFFFFF;
     font-family: Arial, sans-serif;
+    /* height: 100vh; */
 }
 
 .title-container {
@@ -13,7 +14,54 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px; /* Расстояние между кубиками */
-    margin-bottom: 30px;
+    margin: 30px 0px;
+}
+
+.scroll-containers {
+    position: relative;
+    height: 250px; /* Высота блока, чтобы контент не прыгал */
+    width: 100%; /* Можно задать фиксированную ширину */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow-y: auto; */
+}
+
+.container1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.5s, transform 0.5s;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между кубиками */
+}
+
+.container1.hidden {
+    opacity: 0;
+    /* transform: translateY(50%); */
+    pointer-events: none;
+}
+
+.container2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    /* transform: translateY(-50%); */
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между кубиками */
+}
+
+.container2.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .cube {
@@ -98,4 +146,36 @@ button:not(:disabled):hover {
     background: #007bff;
     color: white;
     border-color: #0056b3;
+}
+
+
+.container-full {
+    width: 100vw;
+    height: 200vh; /* Две страницы */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Навигация */
+.nav-dots {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+.dot.active {
+    opacity: 1;
+    transform: scale(1.3);
 }

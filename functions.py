@@ -443,8 +443,8 @@ def check_test_list_name(sheet_name):
         return False
 
 
-def test_list(file_path, list_name):
-    print('дернул test_list')
+def collect_data_test_list(file_path, list_name):
+    print('дернул collect_data_test_list')
 
     def extract_intents_utters(file_path):
         '''
@@ -559,7 +559,7 @@ def test_list(file_path, list_name):
     }
 
     missing_texts = {}
-    to_action_intents = {}
+    missing_duplicate_key = []
     missing_items = {}  # Словарь для фронта
 
     # Обработка сторисов
@@ -582,6 +582,14 @@ def test_list(file_path, list_name):
             })
 
             items = process_steps(steps, root_action)
+
+            print('\n\n\n\n\n\n\n')
+            print(items)  # Посмотрим, что там вообще
+            print(type(items), items)  
+            if items:
+                print(type(items[0]), items[0])  # Посмотрим тип первого элемента
+            print('\n\n\n\n\n\n\n')
+
 
             for item in items:
                 if item["question"] == "переспрос":
@@ -697,7 +705,7 @@ def test_list(file_path, list_name):
                     text = saved_data['text']
                     question_type = saved_data['question_type']
                 else:
-                    to_action_intents.append(duplicate_key)
+                    missing_duplicate_key.append(duplicate_key)
                     missing_items[duplicate_key] = {"intent": intent, "question": "", "text": ""}  # Пустые значения
                     
                     # для поля question
@@ -759,7 +767,7 @@ def test_list(file_path, list_name):
                 "text": text
             })
 
-        return items
+        return items, missing_items
 
     # Обработка intents_utters
     excel_rows = []
@@ -768,6 +776,7 @@ def test_list(file_path, list_name):
     stories_rows = process_stories(stories)
     excel_rows.extend(stories_rows)
 
+    # тут кажется то что вытащили из экшнов добавляем в excel_rows
     for intent, utters in intents_utters.items():
         for utter in utters:
             if utter in responses:
@@ -796,6 +805,7 @@ def test_list(file_path, list_name):
                 if action.startswith("utter_q") and action.endswith("RU"):
                     root_action = action
                     break
+
         if root_action and root_action in responses:
             if root_action not in questions:
                 questions[root_action] = {
@@ -828,6 +838,13 @@ def test_list(file_path, list_name):
                 "question": item["question"],
                 "text": item["text"]
             })
+    
+    print(excel_rows)
+    return 'DEFUCK'
+
+
+def write_data_test_list(file_path, list_name):
+    print('дернул write_data_test_list')
 
     #запись в таблицу
     gc = gspread.service_account(filename="service_account.json")

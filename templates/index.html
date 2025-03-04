@@ -10,16 +10,27 @@
         <div class="title-container">
             <h1>Автоматизируй всё – работай меньше, живи больше!🚀🥸</h1>
         </div>
-        
-        <div class="container">
-            <div class="cube" id="preRecording" onclick="toggleSelection(this)">создать таблицу предзаписи</div>
-            <div class="cube" id="checkTed" onclick="toggleSelection(this)">проверка на TedPolicy</div>
-            <div class="cube" id="csv" onclick="toggleSelection(this)">создать csv</div>
-            <div class="cube" id="testList" onclick="toggleSelection(this)">создать таблицу для тестирование</div>
-            <!-- <div class="cube" id="audioProcessing" onclick="toggleSelection(this)">обработка аудио</div> -->
+        <!-- Добавляем контейнеры сюда -->
+        <div class="scroll-containers">
+            <div class="container1" id="firstContainer">
+                <div class="cube" id="preRecording" onclick="toggleSelection(this)">создать таблицу предзаписи</div>
+                <div class="cube" id="checkTed" onclick="toggleSelection(this)">проверка на TedPolicy</div>
+                <div class="cube" id="csv" onclick="toggleSelection(this)">создать csv</div>
+            </div>
+            
+            <div class="container2" id="secondContainer">
+                <div class="cube" id="testList" onclick="toggleSelection(this)">создать таблицу для тестирование</div>
+                <!-- <div class="cube" id="audioProcessing" onclick="toggleSelection(this)">обработка аудио</div> -->
+            </div>
+
+            <!-- Навигация -->
+            <div class="nav-dots">
+                <div class="dot active" onclick="scrollToContainer(1)"></div>
+                <div class="dot" onclick="scrollToContainer(2)"></div>
+            </div>
         </div>
 
-        <div class="container">
+        <div class="container" id="projectFileContainer" style="display: none; align-items: center; gap: 10px;">
             <h4 style="margin: 0;">Выберите папку с проектом:</h4>
             <input type="file" id="folderInput" webkitdirectory directory multiple>
         </div>
@@ -60,6 +71,14 @@
             <div class="modal-content">
                 <span id="close-modal-test-list" class="close">&times;</span>
                 <div id="modal-content-test-list"></div>
+            </div>
+        </div>
+
+        <!-- Модальное окно экшны: пропустить или ввести вручную данные -->
+        <div id="modal-actions" class="modal">
+            <div class="modal-content">
+                <span id="close-modal-actions" class="close">&times;</span>
+                <div id="modal-content-actions"></div>
             </div>
         </div>
 
