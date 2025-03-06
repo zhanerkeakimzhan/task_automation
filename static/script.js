@@ -1,6 +1,44 @@
 // скролл между двумя страничками
 let currentContainer = 1; // Отслеживаем, какой контейнер активен
 
+document.addEventListener("wheel", function (event) {
+    let firstContainer = document.getElementById("firstContainer");
+    let secondContainer = document.getElementById("secondContainer");
+
+    // Проверяем направление скролла
+    if (event.deltaY > 0) { 
+        // Скроллим вниз → показываем второй контейнер
+        firstContainer.classList.add("hidden");
+        secondContainer.classList.add("visible");
+        currentContainer = 2;
+    } else { 
+        // Скроллим вверх → показываем первый контейнер
+        firstContainer.classList.remove("hidden");
+        secondContainer.classList.remove("visible");
+        currentContainer = 1;
+    }
+    
+    // Блокируем скролл всей страницы
+    event.preventDefault();
+     
+    // Убираем выделение у всех .cube при прокрутке
+    document.querySelectorAll(".cube.selected").forEach(cube => {
+        cube.classList.remove("selected");
+        csvInputContainer.style.display = "none";
+        csvInput.value = "";
+        preRecordingInputContainer.style.display = "none";
+        preRecordingInput.value = "";
+        preRecordingListName.value = "";
+        document.querySelectorAll('.gender-button').forEach(btn => btn.classList.remove('selected'));
+        projectFileContainer.style.display = "none";
+        testListInputContainer.style.display = "none";
+        testListInput.value = "";
+    });
+
+    // Обновляем точки-индикаторы
+    updateDots();
+}, { passive: false }); // Важно: предотвращаем стандартное поведение
+
 // Функция для обновления точек-индикаторов
 function updateDots() {
     document.querySelectorAll(".dot").forEach((dot, index) => {
@@ -23,7 +61,7 @@ function scrollToContainer(containerNumber) {
         currentContainer = 2;
     }
 
-    
+
     // Убираем выделение у всех .cube при прокрутке
     document.querySelectorAll(".cube.selected").forEach(cube => {
         cube.classList.remove("selected");
@@ -48,81 +86,196 @@ function toggleSelection(element) {
     // checkContinueButton();
 }
 
-// для выбора пол робота
-document.querySelectorAll('.gender-button').forEach(button => {
-    button.addEventListener('click', function () {
-        // Сброс выделения у всех кнопок
-        document.querySelectorAll('.gender-button').forEach(btn => btn.classList.remove('selected'));
-
-        // Добавление выделения только на выбранную кнопку
-        this.classList.add('selected');
-        selectedGender = this.dataset.gender;
-        localStorage.setItem("selectedGender", selectedGender);
+document.querySelectorAll("#secondContainer .cube").forEach(cube => {
+    cube.addEventListener("click", function () {
+        // Убираем выделение со всех кубов в контейнере
+        document.querySelectorAll("#secondContainer .cube").forEach(c => c.classList.remove("selected"));
+        
+        // Добавляем выделение только выбранному кубу
+        this.classList.add("selected");
     });
 });
 
 
-// нажимаешь на кубик и нужные инпуты появляется снизу
 document.addEventListener("DOMContentLoaded", function () {
-    let projectFileContainer = document.getElementById("projectFileContainer");
-
-    function checkProjectFileVisibility() {
-        let isAnySelected = document.querySelectorAll(".cube.selected").length > 0;
-        projectFileContainer.style.display = isAnySelected ? "flex" : "none";
-    }
-
-    let csvCube = document.getElementById("csv");
-    let csvInputContainer = document.getElementById("csvInputContainer");
-    let csvInput = document.getElementById("csvInput");
-
-    csvCube.addEventListener("click", function () {
-        if (csvCube.classList.contains("selected")) {
-            csvInputContainer.style.display = "flex"; // Показываем инпут
-        } else {
-            csvInputContainer.style.display = "none";  // Скрываем, если убрали выбор
-            csvInput.value = ""; // Очищаем поле ввода
-        }
-        checkProjectFileVisibility();
-    });
-
-    let testListCube = document.getElementById("testList");
-    let testListInputContainer = document.getElementById("testListInputContainer");
-    let testListInput = document.getElementById("testListInput");
-
-    testListCube.addEventListener("click", function () {
-        if (testListCube.classList.contains("selected")) {
-            testListInputContainer.style.display = "flex";
-        } else {
-            testListInputContainer.style.display = "none";
-            testListInput.value = "";
-        }
-        checkProjectFileVisibility();
-    });
-
-    let preRecordingCube = document.getElementById("preRecording");
-    let preRecordingInputContainer = document.getElementById("preRecordingInputContainer");
-    let preRecordingInput = document.getElementById("preRecordingInput");
-    let preRecordingListName = document.getElementById("preRecordingListName");
-
-    preRecordingCube.addEventListener("click", function () {
-        if (preRecordingCube.classList.contains("selected")) {
-            preRecordingInputContainer.style.display = "flex";
-        } else {
-            preRecordingInputContainer.style.display = "none";
-            preRecordingInput.value = "";
-            preRecordingListName.value = "";
-            document.querySelectorAll('.gender-button').forEach(btn => btn.classList.remove('selected'));
-        }
-        checkProjectFileVisibility();
-    });
-
+    const modal = document.getElementById("modal");
+    const modalContent = document.getElementById("modal-content");
+    const openModalBtn = document.createElement("button");
+    openModalBtn.textContent = "Продолжить";
+    openModalBtn.id = "openModalBtn";
+    document.body.appendChild(openModalBtn);
     
-    let checkTedCube = document.getElementById("checkTed");
-    checkTedCube.addEventListener("click", function () {
-        checkProjectFileVisibility();
-    });
+    openModalBtn.addEventListener("click", function () {
+        modalContent.innerHTML = ""; // Очистка содержимого
+        
+        const selectedCubes = document.querySelectorAll(".cube.selected");
+        
+        if (selectedCubes.length === 0) {
+            modalContent.innerHTML = "<p>Выберите хотя бы один вариант!</p>";
+        } else {
+            modalContent.innerHTML = "<h2>Теперь нужно заполнить некоторые данные!🤓🥹</h2>";
+            modalContent.innerHTML += `<div class="input-container">
+                                            <h4>Выберите папку с проектом:</h4>
+                                            <label for="folderInput" class="custom-file-button">Выбрать папку</label>
+                                            <span id="folderName">Файлы не выбраны!</span>
+                                            <input type="file" id="folderInput" webkitdirectory directory multiple>
+                                        </div>`;
+            
+            console.log(document.getElementById("folderInput")?.hasAttribute("webkitdirectory"));
 
-    checkProjectFileVisibility();
+            // загрузка файла
+            document.addEventListener("change", function (event) {
+                if (event.target && event.target.id === "folderInput") {
+                    let files = event.target.files; // Получает загруженные файлы
+                    console.log("Файлы загружены:", files);
+
+                    let checkFiles = document.getElementById("folderName");
+
+                    if (files.length > 0) {
+                        // checkFiles.textContent = `Выбрано файлов: ${files.length}`;
+                        checkFiles.textContent = `Файлы загружены!`;
+                    } else {
+                        checkFiles.textContent = "Файлы не выбраны!";
+                    }
+            
+                    let fileMap = {
+                        "domain.yml": null, 
+                        "data/rules.yml": null, 
+                        "data/stories.yml": null,
+                        "data/nlu.yml": null,
+                        "actions/actions.py": null
+                    };
+            
+                    let formData = new FormData();
+                    let folderName = "";
+            
+                    for (let file of files) { 
+                        let pathParts = file.webkitRelativePath.split("/"); 
+                        if (!folderName) {
+                            folderName = pathParts[0]; 
+                            formData.append("folderName", folderName);
+                        }
+            
+                        if (file.webkitRelativePath.includes("domain.yml")) {
+                            fileMap["domain.yml"] = file;
+                            formData.append("domain", file);
+                        } else if (file.webkitRelativePath.includes("data/rules.yml")) {
+                            fileMap["data/rules.yml"] = file;
+                            formData.append("rules", file);
+                        } else if (file.webkitRelativePath.includes("data/stories.yml")) {
+                            fileMap["data/stories.yml"] = file;
+                            formData.append("stories", file);
+                        } else if (file.webkitRelativePath.includes("data/nlu.yml")) {
+                            fileMap["data/nlu.yml"] = file;
+                            formData.append("nlu", file);
+                        } else if (file.webkitRelativePath.includes("actions/actions.py")) {
+                            fileMap["actions/actions.py"] = file;
+                            formData.append("actions", file);
+                        }
+                    }
+            
+                    let fileInfo = document.getElementById('fileInfo');
+                    if (fileMap["domain.yml"] && fileMap["data/rules.yml"] && fileMap["data/stories.yml"] && fileMap["data/nlu.yml"] && fileMap["actions/actions.py"]) {
+                        fileInfo.innerText = "Файлы загружены!";
+                        fileInfo.style.color = "green";
+            
+                        fetch('/upload', { 
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => console.log("Ответ от сервера:", data))
+                        .catch(error => console.error("Ошибка загрузки:", error));
+                    } else {
+                        fileInfo.innerText = "Не все файлы найдены!";
+                        fileInfo.style.color = "red";
+                    }
+                }
+                checkContinueButton();
+            });
+            
+            selectedCubes.forEach(cube => {
+                if (cube.id === "csv") {
+                    modalContent.innerHTML += `<div class="input-container"><h4>Введите название листа предзаписи для создание CSV:</h4><input type='text' id='modalCsvInput' placeholder="для вытаскивание название аудио из этого листа"></div>`;
+                } else if (cube.id === "testList") {
+                    modalContent.innerHTML += `<div class="input-container"><h4>Введите название для листа тестирование:</h4><input type='text' id='modalTestListInput' placeholder="что-бы создать лист с таким названием"></div>`;
+                } else if (cube.id === "preRecording") {
+                    modalContent.innerHTML += `<div>
+                        <div class="gender-container">
+                            <h4>Выберите пол робота:</h4>
+                            <button class='gender-button' data-gender='M'>Муж</button>
+                            <button class='gender-button' data-gender='F'>Жен</button>
+                        </div>
+                                
+                        <div class="input-container">
+                            <h4>Введите название для аудио:</h4>
+                            <input type='text' id='modalPreRecordingInput' placeholder="для заполнение поле название аудио">
+                        </div>
+
+                        <div class="input-container">
+                            <h4>Введите название для листа предзаписи:</h4>
+                            <input type='text' id='modalPreRecordingListName' placeholder="что-бы создать лист с таким названием">
+                        </div>
+
+                    </div>`;
+                    // для выбора пол робота
+                    document.querySelectorAll('.gender-button').forEach(button => {
+                        button.addEventListener('click', function () {
+                            // Сброс выделения у всех кнопок
+                            document.querySelectorAll('.gender-button').forEach(btn => btn.classList.remove('selected'));
+
+                            // Добавление выделения только на выбранную кнопку
+                            this.classList.add('selected');
+                            selectedGender = this.dataset.gender;
+                            localStorage.setItem("selectedGender", selectedGender);
+                        });
+                    });
+                }
+            });
+            
+            // Вешаем один обработчик событий на весь `document`
+            document.addEventListener("click", function (event) {
+                if (event.target.classList.contains("gender-button")) {
+                    // Сброс выделения у всех кнопок
+                    document.querySelectorAll('.gender-button').forEach(btn => btn.classList.remove('selected'));
+
+                    // Добавление выделения только на выбранную кнопку
+                    event.target.classList.add('selected');
+
+                    // Сохранение выбора в локальное хранилище
+                    let selectedGender = event.target.dataset.gender;
+                    localStorage.setItem("selectedGender", selectedGender);
+                    console.log("Выбранный пол:", selectedGender);
+                }
+            });
+
+            // modalContent.innerHTML += `<button id='continueBtn' disabled>Создать</button>`;
+
+            if (document.getElementById("firstContainer").querySelector(".selected")) {
+                modalContent.innerHTML += `<button id='continueBtn1' disabled>Создать</button>`;
+            } else if (document.getElementById("secondContainer").querySelector(".selected")) {
+                modalContent.innerHTML += `<button id='continueBtn2' disabled>Создать</button>`;
+            }
+        }
+        modal.style.display = "flex";
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
+
+        const scroll = document.getElementById("scroll-containers");
+        scroll.style.overflow = "hidden"; // Блокируем фон
+    });
+    
+    document.getElementById("close-modal").addEventListener("click", function () {
+        modal.style.display = "none";
+        const scroll = document.getElementById("scroll-containers");
+        scroll.style.overflow = "hidden"; // Блокируем фон
+    });
+    
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 });
 
 
@@ -130,8 +283,15 @@ document.addEventListener("DOMContentLoaded", function () {
 function submitSelection() {
     let selectedCubes = document.querySelectorAll(".cube.selected");
     let selectedIds = Array.from(selectedCubes).map(cube => cube.id);
-    let csvInput = document.getElementById('csvInput').value.trim();
-    let testListInput = document.getElementById('testListInput').value.trim();
+
+    
+    let csvInputElem = document.getElementById('modalCsvInput');
+    let csvInput = csvInputElem ? csvInputElem.value.trim() : "";
+
+    
+    let testListInputElem = document.getElementById('modalTestListInput');
+    let testListInput = testListInputElem ? testListInputElem.value.trim() : "";
+    
 
     console.log(csvInput);
     console.log(testListInput);
@@ -151,6 +311,12 @@ function checkExistsList(selectedIds, csvInput, testListInput){
     localStorage.setItem("csvInput", csvInput);
     localStorage.setItem("testListInput", testListInput);
 
+    let modalContent = document.getElementById("modal-content");
+    modalContent.innerHTML = `<div class="loading-container">
+    <div class="spinner"></div>
+    <p>Загрузка данных...</p>
+    </div>`;
+
     fetch(`/check_list_exists?name=${encodeURIComponent(testListInput)}`)
             .then(response => response.json())
             .then(data => {
@@ -167,10 +333,27 @@ function checkExistsList(selectedIds, csvInput, testListInput){
 
 // отправка данных после проверки testList /submit
 function continueSubmit(selectedIds, csvInput, testListInput){
+    // Добавляем спиннер загрузки перед обработкой данных
     let data = { selected: selectedIds };
-    let preRecordingInput = document.getElementById('preRecordingInput').value.trim();
-    let preRecordingListName = document.getElementById('preRecordingListName').value.trim();
-    selectedGender = localStorage.getItem("selectedGender");
+    // let preRecordingInput = document.getElementById('preRecordingInput').value.trim();
+    // let preRecordingListName = document.getElementById('preRecordingListName').value.trim();
+    // selectedGender = localStorage.getItem("selectedGender");
+
+
+    // Проверяем, появились ли элементы в DOM
+    let preRecordingInputElem = document.getElementById('modalPreRecordingInput');
+    let preRecordingListNameElem = document.getElementById('modalPreRecordingListName');
+
+    console.log(preRecordingInputElem)
+    console.log(preRecordingListNameElem)
+
+    let preRecordingInput = preRecordingInputElem ? preRecordingInputElem.value.trim() : "";
+    let preRecordingListName = preRecordingListNameElem ? preRecordingListNameElem.value.trim() : "";
+    let selectedGender = localStorage.getItem("selectedGender"); // Получаем из localStorage
+
+    console.log(preRecordingInput)
+    console.log(preRecordingListName)
+    console.log(selectedGender)
 
 
     if (selectedIds.includes("csv") && csvInput) {
@@ -183,6 +366,14 @@ function continueSubmit(selectedIds, csvInput, testListInput){
         data.selectedGender = selectedGender;
     }
 
+    console.log(data)
+
+    let modalContent = document.getElementById("modal-content");
+    modalContent.innerHTML = `<div class="loading-container">
+    <div class="spinner"></div>
+    <p>Загрузка данных...</p>
+    </div>`;
+    
     if (selectedIds.length > 0) {
         fetch('/submit', { 
             method: 'POST',
@@ -215,13 +406,16 @@ function continueSubmit(selectedIds, csvInput, testListInput){
                     title.innerText = "Проверка на TedPolicy:";
                     section.appendChild(title);
                 } else if (key == "testList"){
-                    title.innerText = "Создание таблицы для тестирование:";
+                    title.innerText = "Создание таблицы тестирование:";
                     section.appendChild(title);
                 } else if (key == "csv"){
                     title.innerText = "Создание CSV:";
                     section.appendChild(title);
                 } else if (key == "audioProcessing"){
                     title.innerText = "Обработка аудио:";
+                    section.appendChild(title);
+                } else if (key == "preRecording"){
+                    title.innerText = "Создание таблицы предзаписи:";
                     section.appendChild(title);
                 }
 
@@ -307,10 +501,15 @@ function showTestListModal() {
 
     let modalContent = document.getElementById("modal-content-test-list");
     modalContent.innerHTML = `
-        <p>Такой лист уже существует. Что сделать?</p>
-        <button id="overwriteListBtn" onclick="overwriteList()">Перезаписать</button>
-        <input type="text" id="newTestListName" placeholder="Введите название">
-        <button id="submitNewNameBtn" onclick="submitNewName()">Отправить новое название</button>
+        <h2>Такой лист уже существует. Что делать?</h2>
+        <div class="button-wrapper">
+            <button id="overwriteListBtn" onclick="overwriteList()">Перезаписать</button>
+        </div>
+
+        <div class="input-wrapper">
+            <input type="text" id="newTestListName" placeholder="Введите название">
+            <button id="submitNewNameBtn" onclick="submitNewName()">Отправить</button>
+        </div>
     `;
 }
 
@@ -380,68 +579,6 @@ function enterManually() {
 }
 
 
-// загрузка файла
-document.getElementById('folderInput').addEventListener('change', function(event) {
-    let files = event.target.files; //Получает загруженные файлы
-    let fileMap = { //Создает fileMap с нужными файлами
-        "domain.yml": null, 
-        "data/rules.yml": null, 
-        "data/stories.yml": null,
-        "data/nlu.yml": null,
-        "actions/actions.py": null
-    };
-
-    let formData = new FormData();
-    let folderName = "";
-
-    for (let file of files) { // Проверяет, есть ли в загруженных файлах нужные .yml Добавляет их в FormData
-        let pathParts = file.webkitRelativePath.split("/"); // Разбиваем путь по /
-        if (!folderName) {
-            folderName = pathParts[0]; // Берём первую часть как имя папки
-            console.log(folderName)
-            formData.append("folderName", folderName)
-        }
-
-        if (file.webkitRelativePath.includes("domain.yml")) {
-            fileMap["domain.yml"] = file;
-            formData.append("domain", file);
-        } else if (file.webkitRelativePath.includes("data/rules.yml")) {
-            fileMap["data/rules.yml"] = file;
-            formData.append("rules", file);
-        } else if (file.webkitRelativePath.includes("data/stories.yml")) {
-            fileMap["data/stories.yml"] = file;
-            formData.append("stories", file);
-        } else if (file.webkitRelativePath.includes("data/nlu.yml")) {
-            fileMap["data/nlu.yml"] = file;
-            formData.append("nlu", file);
-        } else if (file.webkitRelativePath.includes("actions/actions.py")) {
-            fileMap["actions/actions.py"] = file;
-            formData.append("actions", file);
-        }
-    }
-
-    let fileInfo = document.getElementById('fileInfo');
-
-    if (fileMap["domain.yml"] && fileMap["data/rules.yml"] && fileMap["data/stories.yml"] && fileMap["data/nlu.yml"] && fileMap["actions/actions.py"]) {
-        fileInfo.innerText = "Файлы загружены!";
-        fileInfo.style.color = "green";
-
-        fetch('/upload', { //Отправляет файлы на /upload
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => console.log("Ответ от сервера:", data))
-        .catch(error => console.error("Ошибка загрузки:", error));
-
-    } else {
-        fileInfo.innerText = "Не все файлы найдены!";
-        fileInfo.style.color = "red";
-    }
-
-    checkContinueButton();
-});
-
 
 // Функция проверки кнопки "Продолжить"
 function checkContinueButton() {
@@ -451,12 +588,32 @@ function checkContinueButton() {
     console.log("Выбраны кубы:", selectedCubes);
     console.log("Файлы загружены:", filesUploaded);
 
-    let btn = document.getElementById("continueBtn");
+    let btn1 = document.getElementById("continueBtn1");
+    let btn2 = document.getElementById("continueBtn2");
     if (selectedCubes && filesUploaded) {
-        btn.removeAttribute("disabled"); // Убираем disabled
-        btn.onclick = submitSelection; // Назначаем обработчик клика
+        if (btn1) {
+            btn1.removeAttribute("disabled");
+            btn1.onclick = function () {
+                console.log("Кнопка из firstContainer нажата!");
+                // Здесь вызываем нужную функцию, например:
+                submitSelection();
+            };
+        }
+        
+        if (btn2) {
+            btn2.removeAttribute("disabled");
+            btn2.onclick = function () {
+                console.log("Кнопка из secondContainer нажата!");
+                // Здесь вызываем другую функцию:
+                submitSelection();
+            };
+        }
+        // btn.removeAttribute("disabled"); // Убираем disabled
+        // btn.onclick = submitSelection; // Назначаем обработчик клика
     } else {
-        btn.setAttribute("disabled", "true"); // Ставим обратно, если условия не выполнены
-        btn.onclick = null; // Убираем обработчик клика
+        btn1.setAttribute("disabled", "true"); // Ставим обратно, если условия не выполнены
+        btn2.setAttribute("disabled", "true"); // Ставим обратно, если условия не выполнены
+        btn1.onclick = null; // Убираем обработчик клика
+        btn2.onclick = null; // Убираем обработчик клика
     }
 }

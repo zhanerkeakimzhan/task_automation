@@ -11,7 +11,7 @@
             <h1>Автоматизируй всё – работай меньше, живи больше!🚀🥸</h1>
         </div>
         <!-- Добавляем контейнеры сюда -->
-        <div class="scroll-containers">
+        <div class="scroll-containers" id="scroll-containers">
             <div class="container1" id="firstContainer">
                 <div class="cube" id="preRecording" onclick="toggleSelection(this)">создать таблицу предзаписи</div>
                 <div class="cube" id="checkTed" onclick="toggleSelection(this)">проверка на TedPolicy</div>
@@ -20,7 +20,7 @@
             
             <div class="container2" id="secondContainer">
                 <div class="cube" id="testList" onclick="toggleSelection(this)">создать таблицу для тестирование</div>
-                <!-- <div class="cube" id="audioProcessing" onclick="toggleSelection(this)">обработка аудио</div> -->
+                <div class="cube-waiting" id="audioProcessing" onclick="toggleSelection(this)">обработка аудио<br>(coming soon)</div>
             </div>
 
             <!-- Навигация -->
@@ -56,7 +56,9 @@
             <input type="text" id="preRecordingListName" placeholder="введите">
         </div>
 
-        <button id="continueBtn" disabled>Продолжить</button>
+        <!-- <button id="continueBtn" disabled>Продолжить</button> -->
+        <!-- <button id="buttonContinue" disabled>Продолжить</button> -->
+        <!-- <button id="openModalBtn">Открыть модальное окно</button> -->
 
         <!-- Модальное окно -->
         <div id="modal" class="modal">

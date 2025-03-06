@@ -3,7 +3,7 @@ import os
 import uuid
 import pandas as pd
 import shutil
-from functions import check_ted_policy, parse_csv, check_test_list_name, collect_data_test_list, prerecording_list, write_data_test_list
+from functions import check_ted_policy, parse_csv, check_test_list_name, prerecording_list, test_list
 from urllib.parse import unquote
 
 
@@ -34,6 +34,7 @@ def submit():
     selectedGender = data.get('selectedGender', '')
     response_data = {}
     print(selected_ids)
+    print(selectedGender)
 
     for cube_id in selected_ids:
         if cube_id == "checkTed":
@@ -47,11 +48,9 @@ def submit():
             print(response)
             response_data[cube_id] = response
         elif cube_id == "testList":
-            missing_items = collect_data_test_list(file_path, testListInput)
-            if missing_items:
-                response_data[cube_id] = missing_items
-            else:
-                response_data[cube_id] = 'ВСЕ ХОРОШО'
+            response = test_list(file_path, testListInput)
+            print(response)
+            response_data[cube_id] = response
         elif cube_id == "csv":
             response_data[cube_id] = "Ваши файлы: <a href='/download_csv' target='_blank' class='download-link'>Скачать CSV</a> <a href='/download_excel' target='_blank' class='download-link'>Скачать Excel</a>"
         elif cube_id == "audioProcessing":

@@ -443,8 +443,8 @@ def check_test_list_name(sheet_name):
         return False
 
 
-def collect_data_test_list(file_path, list_name):
-    print('дернул collect_data_test_list')
+def test_list(file_path, list_name):
+    print('дернул test_list')
 
     def extract_intents_utters(file_path):
         '''
@@ -582,14 +582,6 @@ def collect_data_test_list(file_path, list_name):
             })
 
             items = process_steps(steps, root_action)
-
-            print('\n\n\n\n\n\n\n')
-            print(items)  # Посмотрим, что там вообще
-            print(type(items), items)  
-            if items:
-                print(type(items[0]), items[0])  # Посмотрим тип первого элемента
-            print('\n\n\n\n\n\n\n')
-
 
             for item in items:
                 if item["question"] == "переспрос":
@@ -767,7 +759,7 @@ def collect_data_test_list(file_path, list_name):
                 "text": text
             })
 
-        return items, missing_items
+        return items
 
     # Обработка intents_utters
     excel_rows = []
@@ -839,13 +831,7 @@ def collect_data_test_list(file_path, list_name):
                 "text": item["text"]
             })
     
-    print(excel_rows)
-    return 'DEFUCK'
-
-
-def write_data_test_list(file_path, list_name):
-    print('дернул write_data_test_list')
-
+    
     #запись в таблицу
     gc = gspread.service_account(filename="service_account.json")
     SPREADSHEET_ID = "1fzp8Lpz506QeTG4l0iweo_sq_T2j8DXAGRE9p-rVICo"
