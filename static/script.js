@@ -449,22 +449,22 @@ function continueSubmit(selectedIds, csvInput, testListInput){
             // });
 
             // Если выбран CSV, показываем кнопку скачивания
-            if (selectedIds.includes("csv")) {
-                let csvDownload = document.createElement("a");
-                csvDownload.href = "/download_csv";
-                document.body.appendChild(csvDownload);
-                csvDownload.click();
-                document.body.removeChild(csvDownload);
+            // if (selectedIds.includes("csv")) {
+            //     let csvDownload = document.createElement("a");
+            //     csvDownload.href = "/download_csv";
+            //     document.body.appendChild(csvDownload);
+            //     csvDownload.click();
+            //     document.body.removeChild(csvDownload);
             
-                // Добавляем задержку перед скачиванием Excel
-                setTimeout(() => {
-                    let excelDownload = document.createElement("a");
-                    excelDownload.href = "/download_excel";
-                    document.body.appendChild(excelDownload);
-                    excelDownload.click();
-                    document.body.removeChild(excelDownload);
-                }, 1000); // 500 мс задержка (можно увеличить, если не срабатывает)
-            }
+            //     // Добавляем задержку перед скачиванием Excel
+            //     setTimeout(() => {
+            //         let excelDownload = document.createElement("a");
+            //         excelDownload.href = "/download_excel";
+            //         document.body.appendChild(excelDownload);
+            //         excelDownload.click();
+            //         document.body.removeChild(excelDownload);
+            //     }, 1000); // 500 мс задержка (можно увеличить, если не срабатывает)
+            // }
             
             showModal(); // Функция для отображения модального окна
         })
