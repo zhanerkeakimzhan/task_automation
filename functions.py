@@ -241,7 +241,7 @@ def parse_csv(project_path, sheet_name, file_name):
                             'Next_audio': '',
                             'Duration_waiting': '',
                             'Finished': '',
-                            'Language': "AudioRU" if intent_name.endswith("RU") else "AudioKZ" if intent_name.endswith("KZ") else "AudioRU"
+                            'Language': "AudioRU" if intent_name.endswith("RU") else "AudioKZ" if intent_name.endswith("KZ") else "AudioRU",
                             'BadRU_M': [],
                             'BadKZ_M': [],
                             'BadRU_F': [],
