@@ -189,7 +189,32 @@ button:not(:disabled):hover {
     /* border-color: #0056b3; */
 }
 
+.lang-button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.lang-container button {
+    padding: 6px 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    margin: 0;
+}
+
+.lang-button.selected {
+    background: #175880;
+    color: white;
+    /* border-color: #0056b3; */
+}
+
 #folderInput {
+    display: none; /* Скрываем стандартный input */
+}
+
+#wavInput {
     display: none; /* Скрываем стандартный input */
 }
 
@@ -267,6 +292,13 @@ button:not(:disabled):hover {
 }
 
 .gender-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Отступ между заголовком и кнопками */
+    margin-bottom: 10px; /* Отступ вниз */
+}
+
+.lang-container {
     display: flex;
     align-items: center;
     gap: 10px; /* Отступ между заголовком и кнопками */

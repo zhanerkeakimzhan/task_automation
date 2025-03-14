@@ -4,6 +4,7 @@ import uuid
 import pandas as pd
 import shutil
 from functions import check_ted_policy, parse_csv, check_test_list_name, prerecording_list, test_list
+from console_main import audio_processing
 from urllib.parse import unquote
 
 
@@ -12,9 +13,11 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 user_id = str(uuid.uuid4())[:8]
 file_path = f'uploads/user_{user_id}'
+wav_path = ''
 folder_name = 'default'
 csvInput = ''
 testListInput = ''
+audioProcessingInput = ''
 
 @app.route('/')
 def home():
@@ -26,12 +29,16 @@ def submit():
     global csvInput
     global testListInput
     data = request.get_json()
+
     selected_ids = data.get('selected', [])
     csvInput = data.get('csvInput', '')
     testListInput = data.get('testListInput', '')
     preRecordingInput = data.get('preRecordingInput', '')
     preRecordingListName = data.get('preRecordingListName', '')
     selectedGender = data.get('selectedGender', '')
+    audioProcessingInput = data.get('audioProcessingInput', '')
+    selectedLang = data.get('selectedLang', '')
+
     response_data = {}
     print(selected_ids)
     print(selectedGender)
@@ -54,7 +61,8 @@ def submit():
         elif cube_id == "csv":
             response_data[cube_id] = "Ваши файлы: <a href='/download_csv' target='_blank' class='download-link'>Скачать CSV</a> <a href='/download_excel' target='_blank' class='download-link'>Скачать Excel</a>"
         elif cube_id == "audioProcessing":
-            response_data[cube_id] = "Обработка аудио выполнена."
+            response = audio_processing(wav_path, selectedLang, audioProcessingInput)
+            response_data[cube_id] = "Аудио обработано: <a href='/download_zip' target='_blank' class='download-link'>Скачать zip с аудио</a> "
         else:
             response_data[cube_id] = f"Ответ для {cube_id}"
     print(response_data)
@@ -84,6 +92,17 @@ def download_excel():
     csv_file_path, excel_file_path = parse_csv(file_path, csvInput, folder_name)
     return send_file(excel_file_path, as_attachment=True, download_name=f"{folder_name}.xlsx",
                      mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+
+#обработка аудио
+@app.route('/download_zip', methods=['GET'])
+def download_zip():
+    global wav_path
+    folder_path = os.path.dirname(file_path)
+    print(folder_path)
+
+    zip_path = f'{folder_path}/{audioProcessingInput}'
+    
+    return send_file(zip_path, as_attachment=True, download_name="archive.zip", mimetype="application/zip")
 
 
 @app.route('/delete_folder', methods=['POST'])
@@ -133,6 +152,34 @@ def upload_files():
         "message": "Файлы успешно загружены!",
         "user_folder": base_dir,
         "files": received_files
+    }), 200
+
+@app.route('/uploadWAV', methods=['POST'])
+def upload_wav():
+    global wav_path
+    if "wavFile" not in request.files:
+        return jsonify({"error": "Файл не найден!"}), 400
+
+    file = request.files["wavFile"]
+
+    if file.filename == "":
+        return jsonify({"error": "Файл не выбран!"}), 400
+
+    if not file.filename.lower().endswith(".wav"):
+        return jsonify({"error": "Неверный формат файла! Требуется .wav"}), 400
+
+    base_dir = os.path.join(UPLOAD_FOLDER, f"user_{user_id}")
+    os.makedirs(base_dir, exist_ok=True)
+    wav_path = f'{UPLOAD_FOLDER}/user_{user_id}/{file.filename}'
+    file.save(wav_path)
+
+    print(file.filename)
+    print(wav_path)
+
+    
+    return jsonify({
+        "message": "Файлы успешно загружены!",
+        "user_folder": base_dir
     }), 200
 
 

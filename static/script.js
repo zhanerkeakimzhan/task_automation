@@ -109,9 +109,116 @@ document.addEventListener("DOMContentLoaded", function () {
         modalContent.innerHTML = ""; // Очистка содержимого
         
         const selectedCubes = document.querySelectorAll(".cube.selected");
+
+        const hasAudioProcessing = [...selectedCubes].some(cube => cube.id === "audioProcessing");
+
+
+        console.log(selectedCubes)
+        console.log(hasAudioProcessing)
         
         if (selectedCubes.length === 0) {
             modalContent.innerHTML = "<p>Выберите хотя бы один вариант!</p>";
+        } else if (hasAudioProcessing){
+            modalContent.innerHTML = "<h2>Теперь нужно заполнить некоторые данные!🤓🥹</h2>";
+            modalContent.innerHTML += `<div class="input-container">
+                                            <h4>Выберите WAV файл:</h4>
+                                            <label for="wavInput" class="custom-file-button">Выбрать файл</label>
+                                            <span id="folderName">Файл не выбран!</span>
+                                            <input type="file" id="wavInput" accept=".wav">
+                                        </div>`;
+            
+            // загрузка файла
+            document.addEventListener("change", function (event) {
+                if (event.target && event.target.id === "wavInput") {
+                    let files = event.target.files; // Получает загруженные файлы
+                    console.log("Файлы загружены:", files);
+                    let checkFiles = document.getElementById("folderName");
+
+                    if (files.length > 0) {
+                        checkFiles.textContent = `Файлы загружены!`;
+                    } else {
+                        checkFiles.textContent = "Файлы не выбраны!";
+                    }
+
+                    // Берем только первый файл
+                    const file = files[0];
+            
+                    let formData = new FormData();
+                    let folderName = "";
+            
+                    let fileInfo = document.getElementById('fileInfo');
+                    if (!file.name.toLowerCase().endsWith(".wav")) {
+                        fileInfo.innerText = "Не все файлы найдены!";
+                        fileInfo.style.color = "red";
+                    } else {
+                        fileInfo.innerText = "Файлы загружены!";
+                        fileInfo.style.color = "green";
+                
+                        formData.append("wavFile", file);
+
+                        fetch('/uploadWAV', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => console.log("Ответ от сервера:", data))
+                        .catch(error => console.error("Ошибка загрузки:", error));
+                    }
+                }
+                checkContinueButton();
+            });
+
+            modalContent.innerHTML += `<div>
+                <div class="lang-container">
+                    <h4>Выберите пол робота:</h4>
+                    <button class='lang-button' data-lang='KZ'>Каз</button>
+                    <button class='lang-button' data-lang='RU'>Рус</button>
+                </div>
+
+                <div class="input-container">
+                    <h4>Введите название листа предзаписи:</h4>
+                    <input type='text' id='modalAudioProcessingInput' placeholder="что-бы взять название из этого листа">
+                </div>
+
+            </div>`;
+
+            // для выбора пол робота
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.addEventListener('click', function () {
+                    // Сброс выделения у всех кнопок
+                    document.querySelectorAll('.lang-button').forEach(btn => btn.classList.remove('selected'));
+
+                    // Добавление выделения только на выбранную кнопку
+                    this.classList.add('selected');
+                    selectedLang = this.dataset.lang;
+                    localStorage.setItem("selectedLang", selectedLang);
+                });
+            });
+            
+            // Вешаем один обработчик событий на весь `document`
+            document.addEventListener("click", function (event) {
+                if (event.target.classList.contains("lang-button")) {
+                    // Сброс выделения у всех кнопок
+                    document.querySelectorAll('.lang-button').forEach(btn => btn.classList.remove('selected'));
+
+                    // Добавление выделения только на выбранную кнопку
+                    event.target.classList.add('selected');
+
+                    // Сохранение выбора в локальное хранилище
+                    let selectedLang = event.target.dataset.lang;
+                    localStorage.setItem("selectedLang", selectedLang);
+                    console.log("Выбранный пол:", selectedLang);
+                }
+            });
+
+            // modalContent.innerHTML += `<button id='continueBtn' disabled>Создать</button>`;
+
+            if (document.getElementById("firstContainer").querySelector(".selected")) {
+                modalContent.innerHTML += `<button id='continueBtn1' disabled>Создать</button>`;
+            } else if (document.getElementById("secondContainer").querySelector(".selected")) {
+                modalContent.innerHTML += `<button id='continueBtn2' disabled>Создать</button>`;
+            }
+
         } else {
             modalContent.innerHTML = "<h2>Теперь нужно заполнить некоторые данные!🤓🥹</h2>";
             modalContent.innerHTML += `<div class="input-container">
@@ -293,6 +400,7 @@ function submitSelection() {
     let testListInput = testListInputElem ? testListInputElem.value.trim() : "";
     
 
+
     console.log(csvInput);
     console.log(testListInput);
 
@@ -347,6 +455,7 @@ function continueSubmit(selectedIds, csvInput, testListInput){
     console.log(preRecordingInputElem)
     console.log(preRecordingListNameElem)
 
+    
     let preRecordingInput = preRecordingInputElem ? preRecordingInputElem.value.trim() : "";
     let preRecordingListName = preRecordingListNameElem ? preRecordingListNameElem.value.trim() : "";
     let selectedGender = localStorage.getItem("selectedGender"); // Получаем из localStorage
@@ -355,6 +464,16 @@ function continueSubmit(selectedIds, csvInput, testListInput){
     console.log(preRecordingListName)
     console.log(selectedGender)
 
+    
+    let audioProcessingInputElem = document.getElementById('modalAudioProcessingInput');
+    console.log(audioProcessingInputElem);
+
+
+    let audioProcessingInput = audioProcessingInputElem ? audioProcessingInputElem.value.trim() : "";
+    let selectedLang = localStorage.getItem("selectedLang"); // Получаем из localStorage
+
+    console.log(audioProcessingInput);
+    console.log(selectedLang);
 
     if (selectedIds.includes("csv") && csvInput) {
         data.csvInput = csvInput;
@@ -364,6 +483,9 @@ function continueSubmit(selectedIds, csvInput, testListInput){
         data.preRecordingInput = preRecordingInput;
         data.preRecordingListName = preRecordingListName;
         data.selectedGender = selectedGender;
+    } else if (selectedIds.includes("audioProcessing") && audioProcessingInput && selectedLang) {
+        data.audioProcessingInput = audioProcessingInput;
+        data.selectedLang = selectedLang;
     }
 
     console.log(data)
