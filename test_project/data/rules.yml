@@ -1,0 +1,2966 @@
+version: "3.1"
+
+rules:
+
+# question 1 starts
+
+- rule: utter_q1RU another
+  steps:
+    - action: utter_q1RU
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q1KZ another
+  steps:
+    - action: utter_q1KZ
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q1RU langDetectKZ
+  steps:
+    - action: utter_q1RU
+    - intent: langDetectKZ
+    - action: utter_q4KZ
+
+- rule: utter_q1KZ langDetectRU
+  steps:
+    - action: utter_q1KZ
+    - intent: langDetectRU
+    - action: utter_q4RU
+
+- rule: utter_q1RU change lang to KZ
+  steps:
+    - action: utter_q1RU
+    - intent: changeLangKZ
+    - action: utter_q1KZ
+
+- rule: utter_q1KZ change lang to RU
+  steps:
+    - action: utter_q1KZ
+    - intent: changeLangRU
+    - action: utter_q1RU
+
+- rule: utter_q1RU repeat
+  steps:
+    - action: utter_q1RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q1RU
+
+- rule: utter_q1KZ repeat
+  steps:
+    - action: utter_q1KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q1KZ
+
+- rule: utter_q1KZ soundlessly
+  steps:
+    - action: utter_q1KZ
+    - intent: soundlessly
+    - action: utter_q3KZ
+
+- rule: utter_q1RU robot
+  steps:
+    - action: utter_q1RU
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q1KZ robot
+  steps:
+    - action: utter_q1KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q1RU no
+  steps:
+    - action: utter_q1RU
+    - or:
+      - intent: no
+      - intent: idk
+    - action: utter_understoodRU
+    - action: utter_q2RU
+
+- rule: utter_q1KZ no
+  steps:
+    - action: utter_q1KZ
+    - or:
+      - intent: no
+      - intent: idk
+    - action: utter_understoodKZ
+    - action: utter_q2KZ
+
+- rule: utter_q1RU whoIsIt
+  steps:
+    - action: utter_q1RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_understoodRU
+    - action: utter_q2RU
+
+- rule: utter_q1KZ whoIsIt
+  steps:
+    - action: utter_q1KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_understoodKZ
+    - action: utter_q2KZ
+
+- rule: utter_q1RU utter_repeat_questionRU
+  steps:
+    - action: utter_q1RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q1KZ utter_repeat_questionKZ
+  steps:
+    - action: utter_q1KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q1RU operator
+  steps:
+    - action: utter_q1RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q1KZ operator
+  steps:
+    - action: utter_q1KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q1RU haveQuestion
+  steps:
+    - action: utter_q1RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q1KZ haveQuestion
+  steps:
+    - action: utter_q1KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: utter_q1RU wait
+  steps:
+    - action: utter_q1RU
+    - intent: wait
+    - action: utter_okWaitRU
+    - action: utter_silence_3secRU
+    - action: utter_q1RU
+
+- rule: utter_q1KZ wait
+  steps:
+    - action: utter_q1KZ
+    - intent: wait
+    - action: utter_okWaitKZ
+    - action: utter_silence_3secKZ
+    - action: utter_q1KZ
+
+- rule: utter_q1RU interrupting
+  steps:
+    - action: utter_q1RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q1KZ interrupting
+  steps:
+    - action: utter_q1KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+
+- rule: utter_q1RU out_of_scope
+  steps:
+    - action: utter_q1RU
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: yes
+      - intent: langDetectRU
+    - action: action_counterRU
+
+- rule: utter_q1KZ out_of_scope
+  steps:
+    - action: utter_q1KZ
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: langDetectKZ
+    - action: action_counterKZ
+#--------------------------------
+- rule: utter_q1RU stockNoView RU
+  steps:
+    - action: utter_q1RU
+    - intent: stockNoView
+    - action: utter_globalCaseHalykRU
+    - action: utter_q2RU
+
+- rule: utter_q1KZ stockNoView KZ
+  steps:
+    - action: utter_q1KZ
+    - intent: stockNoView
+    - action: utter_globalCaseHalykKZ
+    - action: utter_q2KZ
+
+
+- rule: utter_q1RU investNoOpen RU
+  steps:
+    - action: utter_q1RU
+    - intent: investNoOpen
+    - action: utter_q8RU
+
+- rule: utter_q1KZ investNoOpen KZ
+  steps:
+    - action: utter_q1KZ
+    - intent: investNoOpen
+    - action: utter_q8KZ
+
+- rule: utter_q1RU stockAnalystAct RU
+  steps:
+    - action: utter_q1RU
+    - intent: stockAnalystAct
+    - action: utter_q9RU
+
+- rule: utter_q1KZ stockAnalystAct KZ
+  steps:
+    - action: utter_q1KZ
+    - intent: stockAnalystAct
+    - action: utter_q9KZ
+
+- rule: utter_q1RU bagQues RU
+  steps:
+    - action: utter_q1RU
+    - intent: bagQues
+    - action: utter_q10RU
+
+- rule: utter_q1KZ bagQues KZ
+  steps:
+    - action: utter_q1KZ
+    - intent: bagQues
+    - action: utter_q10KZ
+
+- rule: utter_q1RU freeMoneyAct RU
+  steps:
+    - action: utter_q1RU
+    - intent: freeMoneyAct
+    - action: utter_q11RU
+
+- rule: utter_q1KZ freeMoneyAct KZ
+  steps:
+    - action: utter_q1KZ
+    - intent: freeMoneyAct
+    - action: utter_q11KZ
+
+#question 2 starts
+
+- rule: utter_q2RU yes
+  steps:
+    - action: utter_q2RU
+    - intent: yes
+    - action: utter_q1RU
+
+- rule: utter_q2KZ yes
+  steps:
+    - action: utter_q2KZ
+    - intent: yes
+    - action: utter_q1KZ
+
+- rule: utter_q2RU another
+  steps:
+    - action: utter_q2RU
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q2KZ another
+  steps:
+    - action: utter_q2KZ
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q2RU langDetectKZ
+  steps:
+    - action: utter_q2RU
+    - intent: langDetectKZ
+    - action: utter_q4KZ
+
+- rule: utter_q2KZ langDetectRU
+  steps:
+    - action: utter_q2KZ
+    - intent: langDetectRU
+    - action: utter_q4RU
+
+- rule: utter_q2RU change lang to KZ
+  steps:
+    - action: utter_q2RU
+    - intent: changeLangKZ
+    - action: utter_q2KZ
+
+- rule: utter_q2KZ change lang to RU
+  steps:
+    - action: utter_q2KZ
+    - intent: changeLangRU
+    - action: utter_q2RU
+
+- rule: utter_q2RU repeat
+  steps:
+    - action: utter_q2RU
+    - intent: repeat
+    - action: action_repeat
+
+- rule: utter_q2KZ repeat
+  steps:
+    - action: utter_q2KZ
+    - intent: repeat
+    - action: action_repeat
+
+- rule: utter_q2RU no
+  steps:
+    - action: utter_q2RU
+    - or:
+      - intent: no
+      - intent: idk
+    - action: utter_getCSIRU
+
+- rule: utter_q2KZ no
+  steps:
+    - action: utter_q2KZ
+    - or:
+      - intent: no
+      - intent: idk
+    - action: utter_getCSIKZ
+
+- rule: utter_q2RU soundlessly
+  steps:
+    - action: utter_q2RU
+    - intent: soundlessly
+    - action: action_soundlesslyRU
+
+- rule: utter_q2KZ soundlessly
+  steps:
+    - action: utter_q2KZ
+    - intent: soundlessly
+    - action: action_soundlesslyKZ
+
+- rule: utter_q2RU robot
+  steps:
+    - action: utter_q2RU
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q2KZ robot
+  steps:
+    - action: utter_q2KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q2RU whoIsIt
+  steps:
+    - action: utter_q2RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q2RU
+
+- rule: utter_q2KZ whoIsIt
+  steps:
+    - action: utter_q2KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q2KZ
+
+- rule: utter_q2RU operator
+  steps:
+    - action: utter_q2RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q2KZ operator
+  steps:
+    - action: utter_q2KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q2RU haveQuestion
+  steps:
+    - action: utter_q2RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q2KZ haveQuestion
+  steps:
+    - action: utter_q2KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: utter_q2RU wait
+  steps:
+    - action: utter_q2RU
+    - intent: wait
+    - action: utter_okWaitRU
+    - action: utter_silence_3secRU
+    - action: utter_q1RU
+
+- rule: utter_q2KZ wait
+  steps:
+    - action: utter_q2KZ
+    - intent: wait
+    - action: utter_okWaitKZ
+    - action: utter_silence_3secKZ
+    - action: utter_q1KZ
+
+- rule: utter_q2RU interrupting
+  steps:
+    - action: utter_q2RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q2KZ interrupting
+  steps:
+    - action: utter_q2KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+#------------------------------------
+
+- rule: utter_q2RU stockNoView
+  steps:
+    - action: utter_q2RU
+    - intent: stockNoView
+    - action: utter_globalCaseHalykRU
+    - action: utter_q2RU
+
+- rule: utter_q2KZ stockNoView
+  steps:
+    - action: utter_q2KZ
+    - intent: stockNoView
+    - action: utter_globalCaseHalykKZ
+    - action: utter_q2KZ
+
+- rule: utter_q2RU investNoOpen
+  steps:
+    - action: utter_q2RU
+    - intent: investNoOpen
+    - action: utter_q8RU
+
+- rule: utter_q2KZ investNoOpen
+  steps:
+    - action: utter_q2KZ
+    - intent: investNoOpen
+    - action: utter_q8KZ
+
+- rule: utter_q2RU stockAnalystAct
+  steps:
+    - action: utter_q2RU
+    - intent: stockAnalystAct
+    - action: utter_q9RU
+
+- rule: utter_q2KZ stockAnalystAct
+  steps:
+    - action: utter_q2KZ
+    - intent: stockAnalystAct
+    - action: utter_q9KZ
+
+- rule: utter_q2RU bagQues
+  steps:
+    - action: utter_q2RU
+    - intent: bagQues
+    - action: utter_q10RU
+
+- rule: utter_q2KZ bagQues
+  steps:
+    - action: utter_q2KZ
+    - intent: bagQues
+    - action: utter_q10KZ
+
+- rule: utter_q2RU freeMoneyAct
+  steps:
+    - action: utter_q2RU
+    - intent: freeMoneyAct
+    - action: utter_q11RU
+
+- rule: utter_q2KZ freeMoneyAct
+  steps:
+    - action: utter_q2KZ
+    - intent: freeMoneyAct
+    - action: utter_q11KZ
+#------------------------------------
+
+- rule: utter_q2RU out_of_scope
+  steps:
+    - action: utter_q2RU
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: changeLangRU
+      - intent: langDetectRU
+    - action: action_counterRU
+
+- rule: utter_q2KZ out_of_scope
+  steps:
+    - action: utter_q2KZ
+    - or:
+      - intent: changeLangKZ
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: langDetectKZ
+    - action: action_counterKZ
+
+- rule: utter_q2RU utter_repeat_questionRU
+  steps:
+    - action: utter_q2RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q2KZ utter_repeat_questionKZ
+  steps:
+    - action: utter_q2KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+
+#question 3 starts
+
+- rule: utter_q3RU another
+  steps:
+    - action: utter_q3RU
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q3KZ another
+  steps:
+    - action: utter_q3KZ
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q3RU
+  steps:
+    - action: utter_q3RU
+    - or:
+      - intent: yes
+      - intent: no
+      - intent: idk
+      - intent: soundlessly
+      - intent: haveQuestion
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: wait
+    - action: utter_q1RU
+
+
+- rule: utter_q3KZ
+  steps:
+    - action: utter_q3KZ
+    - or:
+      - intent: yes
+      - intent: no
+      - intent: soundlessly
+      - intent: haveQuestion
+      - intent: idk
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: wait
+    - action: utter_q1KZ
+
+- rule: utter_q3RU repeat
+  steps:
+    - action: utter_q3RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q3RU
+
+- rule: utter_q3KZ repeat
+  steps:
+    - action: utter_q3KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q3KZ
+
+
+- rule: utter_q3RU robot
+  steps:
+    - action: utter_q3RU
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q3KZ robot
+  steps:
+    - action: utter_q3KZ
+    - intent: robot
+    - action: action_robot
+
+
+- rule: utter_q3RU whoIsIt
+  steps:
+    - action: utter_q3RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q2RU
+
+- rule: utter_q3KZ whoIsIt
+  steps:
+    - action: utter_q3KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q2KZ
+
+
+- rule: utter_q3RU operator
+  steps:
+    - action: utter_q3RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q3KZ operator
+  steps:
+    - action: utter_q3KZ
+    - intent: operator
+    - action: action_operator
+
+
+- rule: utter_q3RU interrupting
+  steps:
+    - action: utter_q3RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q3KZ interrupting
+  steps:
+    - action: utter_q3KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+
+- rule: utter_q3RU out_of_scope
+  steps:
+    - action: utter_q3RU
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counterRU
+
+- rule: utter_q3KZ out_of_scope
+  steps:
+    - action: utter_q3KZ
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counterKZ
+
+#------------------------------------
+
+- rule: utter_q3RU stockNoView
+  steps:
+    - action: utter_q3RU
+    - intent: stockNoView
+    - action: utter_globalCaseHalykRU
+    - action: utter_q2RU
+
+- rule: utter_q3KZ stockNoView
+  steps:
+    - action: utter_q3KZ
+    - intent: stockNoView
+    - action: utter_globalCaseHalykKZ
+    - action: utter_q2KZ
+
+
+- rule: utter_q3RU investNoOpen
+  steps:
+    - action: utter_q3RU
+    - intent: investNoOpen
+    - action: utter_q8RU
+
+- rule: utter_q3KZ investNoOpen
+  steps:
+    - action: utter_q3KZ
+    - intent: investNoOpen
+    - action: utter_q8KZ
+
+
+- rule: utter_q3RU stockAnalystAct
+  steps:
+    - action: utter_q3RU
+    - intent: stockAnalystAct
+    - action: utter_q9RU
+
+- rule: utter_q3KZ stockAnalystAct
+  steps:
+    - action: utter_q3KZ
+    - intent: stockAnalystAct
+    - action: utter_q9KZ
+
+
+- rule: utter_q3RU bagQues
+  steps:
+    - action: utter_q3RU
+    - intent: bagQues
+    - action: utter_q10RU
+
+- rule: utter_q3KZ bagQues
+  steps:
+    - action: utter_q3KZ
+    - intent: bagQues
+    - action: utter_q10KZ
+
+
+- rule: utter_q3RU freeMoneyAct
+  steps:
+    - action: utter_q3RU
+    - intent: freeMoneyAct
+    - action: utter_q11RU
+
+- rule: utter_q3KZ freeMoneyAct
+  steps:
+    - action: utter_q3KZ
+    - intent: freeMoneyAct
+    - action: utter_q11KZ
+#------------------------------------
+
+- rule: utter_q3RU utter_repeat_questionRU
+  steps:
+    - action: utter_q3RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q3KZ utter_repeat_questionKZ
+  steps:
+    - action: utter_q3KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+# question 4 starts
+
+- rule: utter_q4RU another
+  steps:
+    - action: utter_q4RU
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q4KZ another
+  steps:
+    - action: utter_q4KZ
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q4
+  steps:
+    - action: utter_q4RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: yes
+      - intent: no
+      - intent: idk
+      - intent: wait
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: changeLangRU
+    - action: action_counterRU
+
+- rule: utter_q4KZ
+  steps:
+    - action: utter_q4KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: yes
+      - intent: no
+      - intent: wait
+      - intent: idk
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: changeLangKZ
+    - action: action_counterKZ
+
+- rule: utter_q4RU change lang to KZ
+  steps:
+    - action: utter_q4RU
+    - intent: changeLangKZ
+    - action: utter_q1KZ
+
+- rule: utter_q4KZ change lang to RU
+  steps:
+    - action: utter_q4KZ
+    - intent: changeLangRU
+    - action: utter_q1RU
+
+- rule: utter_q4RU repeat
+  steps:
+    - action: utter_q4RU
+    - intent: repeat
+    - action: utter_q1RU
+
+- rule: utter_q4KZ repeat
+  steps:
+    - action: utter_q4KZ
+    - intent: repeat
+    - action: utter_q1KZ
+
+- rule: utter_q4RU soundlessly
+  steps:
+    - action: utter_q4RU
+    - intent: soundlessly
+    - action: utter_q3RU
+
+- rule: utter_q4KZ soundlessly
+  steps:
+    - action: utter_q4KZ
+    - intent: soundlessly
+    - action: utter_q3KZ
+
+- rule: utter_q4RU robot
+  steps:
+    - action: utter_q4RU
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q4KZ robot
+  steps:
+    - action: utter_q4KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q4RU whoIsIt
+  steps:
+    - action: utter_q4RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q1RU
+
+- rule: utter_q4KZ whoIsIt
+  steps:
+    - action: utter_q4KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q1KZ
+
+- rule: utter_q4RU operator
+  steps:
+    - action: utter_q4RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q4KZ operator
+  steps:
+    - action: utter_q4KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q4RU haveQuestion
+  steps:
+    - action: utter_q4RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q4KZ haveQuestion
+  steps:
+    - action: utter_q4KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: utter_q4RU interrupting
+  steps:
+    - action: utter_q4RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q4KZ interrupting
+  steps:
+    - action: utter_q4KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+#----------------------------------------
+
+- rule: utter_q4RU stockNoView
+  steps:
+    - action: utter_q4RU
+    - intent: stockNoView
+    - action: utter_globalCaseHalykRU
+    - action: utter_q2RU
+
+- rule: utter_q4KZ stockNoView
+  steps:
+    - action: utter_q4KZ
+    - intent: stockNoView
+    - action: utter_globalCaseHalykKZ
+    - action: utter_q2KZ
+
+- rule: utter_q4RU investNoOpen
+  steps:
+    - action: utter_q4RU
+    - intent: investNoOpen
+    - action: utter_q8RU
+
+- rule: utter_q4KZ investNoOpen
+  steps:
+    - action: utter_q4KZ
+    - intent: investNoOpen
+    - action: utter_q8KZ
+
+- rule: utter_q4RU stockAnalystAct
+  steps:
+    - action: utter_q4RU
+    - intent: stockAnalystAct
+    - action: utter_q9RU
+
+- rule: utter_q4KZ stockAnalystAct
+  steps:
+    - action: utter_q4KZ
+    - intent: stockAnalystAct
+    - action: utter_q9KZ
+
+- rule: utter_q4RU bagQues
+  steps:
+    - action: utter_q4RU
+    - intent: bagQues
+    - action: utter_q10RU
+
+- rule: utter_q4KZ bagQues
+  steps:
+    - action: utter_q4KZ
+    - intent: bagQues
+    - action: utter_q10KZ
+
+- rule: utter_q4KZ freeMoneyAct
+  steps:
+    - action: utter_q4KZ
+    - intent: freeMoneyAct
+    - action: utter_q11KZ
+
+#----------------------------------
+
+- rule: utter_q4RU out_of_scope
+  steps:
+    - action: utter_q4RU
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counterRU
+
+- rule: utter_q4KZ out_of_scope
+  steps:
+    - action: utter_q4KZ
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+    - action: action_counterKZ
+
+- rule: utter_q4RU utter_repeat_questionRU
+  steps:
+    - action: utter_q4RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q4KZ utter_repeat_questionKZ
+  steps:
+    - action: utter_q4KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+
+
+# question 5 starts
+
+- rule: utter_q5RU another
+  steps:
+    - action: utter_q5RU
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q5KZ another
+  steps:
+    - action: utter_q5KZ
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q5
+  steps:
+    - action: utter_q5RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: yes
+      - intent: changeLangRU
+    - action: action_counterRU
+
+- rule: utter_q5KZ
+  steps:
+    - action: utter_q5KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: yes
+      - intent: changeLangKZ
+    - action: action_counterKZ
+
+
+- rule: utter_q5RU change lang to KZ
+  steps:
+    - action: utter_q5RU
+    - intent: changeLangKZ
+    - action: utter_q1KZ
+
+- rule: utter_q5KZ change lang to RU
+  steps:
+    - action: utter_q5KZ
+    - intent: changeLangRU
+    - action: utter_q1RU
+
+
+- rule: utter_q5RU repeat
+  steps:
+    - action: utter_q5RU
+    - intent: repeat
+    - action: utter_q1RU
+
+- rule: utter_q5KZ repeat
+  steps:
+    - action: utter_q5KZ
+    - intent: repeat
+    - action: utter_q1KZ
+
+
+- rule: utter_q5RU soundlessly
+  steps:
+    - action: utter_q5RU
+    - intent: soundlessly
+    - action: utter_q3RU
+
+- rule: utter_q5KZ soundlessly
+  steps:
+    - action: utter_q5KZ
+    - intent: soundlessly
+    - action: utter_q3KZ
+
+- rule: utter_q5RU robot
+  steps:
+    - action: utter_q5RU
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q5KZ robot
+  steps:
+    - action: utter_q5KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q5RU whoIsIt
+  steps:
+    - action: utter_q5RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q1RU
+
+- rule: utter_q5KZ whoIsIt
+  steps:
+    - action: utter_q5KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q1KZ
+
+- rule: utter_q5RU operator
+  steps:
+    - action: utter_q5RU
+    - or:
+      - intent: no
+      - intent: operator
+    - action: utter_toOperatorRU
+
+- rule: utter_q5KZ operator
+  steps:
+    - action: utter_q5KZ
+    - or:
+      - intent: no
+      - intent: operator
+    - action: utter_toOperatorKZ
+
+- rule: utter_q5RU idk
+  steps:
+    - action: utter_q5RU
+    - intent: idk
+    - action: utter_understoodRU
+    - action: utter_q2RU
+
+- rule: utter_q5KZ idk
+  steps:
+    - action: utter_q5KZ
+    - intent: idk
+    - action: utter_understoodKZ
+    - action: utter_q2KZ
+
+- rule: utter_q5RU haveQuestion
+  steps:
+    - action: utter_q5RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q5KZ haveQuestion
+  steps:
+    - action: utter_q5KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: utter_q5RU wait
+  steps:
+    - action: utter_q5RU
+    - intent: wait
+    - action: utter_okWaitRU
+    - action: utter_silence_3secRU
+    - action: utter_q1RU
+
+- rule: utter_q5KZ wait
+  steps:
+    - action: utter_q5KZ
+    - intent: wait
+    - action: utter_okWaitKZ
+    - action: utter_silence_3secKZ
+    - action: utter_q1KZ
+
+
+- rule: utter_q5RU interrupting
+  steps:
+    - action: utter_q5RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q5KZ interrupting
+  steps:
+    - action: utter_q5KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+#---------------------------
+
+- rule: utter_q5RU stockNoView
+  steps:
+    - action: utter_q5RU
+    - intent: stockNoView
+    - action: utter_globalCaseHalykRU
+    - action: utter_q2RU
+
+- rule: utter_q5KZ stockNoView
+  steps:
+    - action: utter_q5KZ
+    - intent: stockNoView
+    - action: utter_globalCaseHalykKZ
+    - action: utter_q2KZ
+
+
+- rule: utter_q5RU investNoOpen
+  steps:
+    - action: utter_q5RU
+    - intent: investNoOpen
+    - action: utter_q8RU
+
+- rule: utter_q5KZ investNoOpen
+  steps:
+    - action: utter_q5KZ
+    - intent: investNoOpen
+    - action: utter_q8KZ
+
+- rule: utter_q5RU stockAnalystAct
+  steps:
+    - action: utter_q5RU
+    - intent: stockAnalystAct
+    - action: utter_q9RU
+
+- rule: utter_q5KZ stockAnalystAct
+  steps:
+    - action: utter_q5KZ
+    - intent: stockAnalystAct
+    - action: utter_q9KZ
+
+- rule: utter_q5RU bagQues
+  steps:
+    - action: utter_q5RU
+    - intent: bagQues
+    - action: utter_q10RU
+
+- rule: utter_q5KZ bagQues
+  steps:
+    - action: utter_q5KZ
+    - intent: bagQues
+    - action: utter_q10KZ
+
+- rule: utter_q5RU freeMoneyAct
+  steps:
+    - action: utter_q5RU
+    - intent: freeMoneyAct
+    - action: utter_q11RU
+
+- rule: utter_q5KZ freeMoneyAct
+  steps:
+    - action: utter_q5KZ
+    - intent: freeMoneyAct
+    - action: utter_q11KZ
+
+#-----------------------------
+
+- rule: utter_q5RU out_of_scope
+  steps:
+    - action: utter_q5RU
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: changeLangRU
+    - action: action_counterRU
+
+- rule: utter_q5KZ out_of_scope
+  steps:
+    - action: utter_q5KZ
+    - or:
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: changeLangKZ
+    - action: action_counterKZ
+
+- rule: utter_q5RU utter_repeat_questionRU
+  steps:
+    - action: utter_q5RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q5KZ utter_repeat_questionKZ
+  steps:
+    - action: utter_q5KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+
+# question 7 starts
+
+- rule: utter_q7RU another
+  steps:
+    - action: utter_q7RU
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q7KZ another
+  steps:
+    - action: utter_q7KZ
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_q7
+  steps:
+    - action: utter_q7RU
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: no
+      - intent: idk
+      - intent: wait
+      - intent: yes
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: haveQuestion
+      - intent: changeLangRU
+    - action: action_counterRU
+
+- rule: utter_q7KZ
+  steps:
+    - action: utter_q7KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: no
+      - intent: idk
+      - intent: wait
+      - intent: yes
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: haveQuestion
+      - intent: changeLangKZ
+    - action: action_counterKZ
+
+- rule: utter_q7RU change lang to KZ
+  steps:
+    - action: utter_q7RU
+    - intent: changeLangKZ
+    - action: utter_q1KZ
+
+- rule: utter_q7KZ change lang to RU
+  steps:
+    - action: utter_q7KZ
+    - intent: changeLangRU
+    - action: utter_q1RU
+
+
+- rule: utter_q7RU repeat
+  steps:
+    - action: utter_q7RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q1RU
+
+- rule: utter_q7KZ repeat
+  steps:
+    - action: utter_q7KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q1KZ
+
+
+- rule: utter_q7RU soundlessly
+  steps:
+    - action: utter_q7RU
+    - intent: soundlessly
+    - action: utter_q3RU
+
+- rule: utter_q7KZ soundlessly
+  steps:
+    - action: utter_q7KZ
+    - intent: soundlessly
+    - action: utter_q3KZ
+
+- rule: utter_q7RU robot
+  steps:
+    - action: utter_q7RU
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q7KZ robot
+  steps:
+    - action: utter_q7KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q7RU whoIsIt
+  steps:
+    - action: utter_q7RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q1RU
+
+- rule: utter_q7KZ whoIsIt
+  steps:
+    - action: utter_q7KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q1KZ
+
+- rule: utter_q7RU operator
+  steps:
+    - action: utter_q7RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q7KZ operator
+  steps:
+    - action: utter_q7KZ
+    - intent: operator
+    - action: action_operator
+
+
+- rule: utter_q7RU interrupting
+  steps:
+    - action: utter_q7RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q7KZ interrupting
+  steps:
+    - action: utter_q7KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+#-----------------------------------
+
+- rule: utter_q7RU stockNoView
+  steps:
+    - action: utter_q7RU
+    - intent: stockNoView
+    - action: utter_globalCaseHalykRU
+    - action: utter_q2RU
+
+- rule: utter_q7KZ stockNoView
+  steps:
+    - action: utter_q7KZ
+    - intent: stockNoView
+    - action: utter_globalCaseHalykKZ
+    - action: utter_q2KZ
+
+
+- rule: utter_q7RU investNoOpen
+  steps:
+    - action: utter_q7RU
+    - intent: investNoOpen
+    - action: utter_q8RU
+
+- rule: utter_q7KZ investNoOpen
+  steps:
+    - action: utter_q7KZ
+    - intent: investNoOpen
+    - action: utter_q8KZ
+
+- rule: utter_q7RU stockAnalystAct
+  steps:
+    - action: utter_q7RU
+    - intent: stockAnalystAct
+    - action: utter_q9RU
+
+- rule: utter_q7KZ stockAnalystAct
+  steps:
+    - action: utter_q7KZ
+    - intent: stockAnalystAct
+    - action: utter_q9KZ
+
+- rule: utter_q7RU bagQues
+  steps:
+    - action: utter_q7RU
+    - intent: bagQues
+    - action: utter_q10RU
+
+- rule: utter_q7KZ bagQues
+  steps:
+    - action: utter_q7KZ
+    - intent: bagQues
+    - action: utter_q10KZ
+
+- rule: utter_q7RU freeMoneyAct
+  steps:
+    - action: utter_q7RU
+    - intent: freeMoneyAct
+    - action: utter_q11RU
+
+- rule: utter_q7KZ freeMoneyAct
+  steps:
+    - action: utter_q7KZ
+    - intent: freeMoneyAct
+    - action: utter_q11KZ
+
+#---------------------------------
+
+- rule: utter_q7RU utter_repeat_questionRU
+  steps:
+    - action: utter_q7RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q7KZ utter_repeat_questionKZ
+  steps:
+    - action: utter_q7KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+# question 8 starts
+- rule: utter_q8RU switch
+  steps:
+    - action: utter_q8RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q8KZ switch
+  steps:
+    - action: utter_q8KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q8RU
+  steps:
+    - action: utter_q8RU
+    - or:
+      - intent: langDetectRU
+      - intent: changeLangRU
+      - intent: langDetectKZ
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: investNoOpen
+      - intent: stockNoView
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: another
+    - action: action_counterRU
+
+- rule: utter_q8KZ
+  steps:
+    - action: utter_q8KZ
+    - or:
+      - intent: langDetectRU
+      - intent: changeLangKZ
+      - intent: langDetectKZ
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: investNoOpen
+      - intent: stockNoView
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: another
+    - action:  action_counterKZ
+
+- rule: utter_q8RU change lang to KZ
+  steps:
+    - action: utter_q8RU
+    - intent: changeLangKZ
+    - action: action_changelang
+
+- rule: utter_q8KZ change lang to RU
+  steps:
+    - action: utter_q8KZ
+    - intent: changeLangRU
+    - action: action_changelang
+
+- rule: utter_q8RU repeat
+  steps:
+    - action: utter_q8RU
+    - intent: repeat
+    - action: utter_silenceRU
+    - action: utter_q8RU
+
+- rule: utter_q8KZ repeat
+  steps:
+    - action: utter_q8KZ
+    - intent: repeat
+    - action: utter_silenceKZ
+    - action: utter_q8KZ
+
+- rule: utter_q8RU soundlessly
+  steps:
+    - action: utter_q8RU
+    - intent: soundlessly
+    - action: action_soundlesslyRU
+    - action: utter_q8RU
+
+- rule: utter_q8KZ soundlessly
+  steps:
+    - action: utter_q8KZ
+    - intent: soundlessly
+    - action: action_soundlesslyKZ
+    - action: utter_q8KZ
+
+- rule: utter_q8RU robot
+  steps:
+    - action: utter_q8RU
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q8KZ robot
+  steps:
+    - action: utter_q8KZ
+    - intent: robot
+    - action: action_robot
+
+- rule: utter_q8RU whoIsIt
+  steps:
+    - action: utter_q8RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q8RU
+
+- rule: utter_q8KZ whoIsIt
+  steps:
+    - action: utter_q8KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q8KZ
+
+- rule: utter_q8RU operator
+  steps:
+    - action: utter_q8RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q8KZ operator
+  steps:
+    - action: utter_q8KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q8RU yes
+  steps:
+    - action: utter_q8RU
+    - intent: yes
+    - action: utter_openFailureRU
+    - action: utter_q2RU
+
+- rule: utter_q8KZ yes
+  steps:
+    - action: utter_q8KZ
+    - intent: yes
+    - action: utter_openFailureKZ
+    - action: utter_q2KZ
+
+- rule: utter_q8RU no
+  steps:
+    - action: utter_q8RU
+    - or:
+      - intent: no
+      - intent: idk
+    - action: utter_understoodRU
+    - action: utter_operCallRU
+
+- rule: utter_q8KZ no
+  steps:
+    - action: utter_q8KZ
+    - or:
+      - intent: no
+      - intent: idk
+    - action: utter_understoodKZ
+    - action: utter_operCallKZ
+
+- rule: utter_q8RU interrupting
+  steps:
+    - action: utter_q8RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q8KZ interrupting
+  steps:
+    - action: utter_q8KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+
+- rule: utter_q8RU haveQuestion
+  steps:
+    - action: utter_q8RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q8KZ haveQuestion
+  steps:
+    - action: utter_q8KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: waitRU
+  steps:
+    - action: utter_q8RU
+    - intent: wait
+    - action: utter_okWaitRU
+    - action: utter_q8RU
+
+- rule: waitKZ
+  steps:
+    - action: utter_q8KZ
+    - intent: wait
+    - action: utter_okWaitKZ
+    - action: utter_q8KZ
+
+# question 9 starts
+
+- rule: utter_q9RU switch
+  steps:
+    - action: utter_q9RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q9KZ switch
+  steps:
+    - action: utter_q9KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q9RU
+  steps:
+    - action: utter_q9RU
+    - or:
+      - intent: langDetectRU
+      - intent: changeLangRU
+      - intent: langDetectKZ
+      - intent: stockNoView
+      - intent: investNoOpen
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: score
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: another
+    - action: action_counterRU
+
+- rule: utter_q9KZ
+  steps:
+    - action: utter_q9KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: stockNoView
+      - intent: investNoOpen
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: score
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: another
+    - action:  action_counterRU
+
+- rule: utter_q9RU change lang to KZ
+  steps:
+    - action: utter_q9RU
+    - intent: changeLangKZ
+    - action: action_changelang
+
+- rule: utter_q9KZ change lang to RU
+  steps:
+    - action: utter_q9KZ
+    - intent: changeLangRU
+    - action: action_changelang
+
+- rule: utter_q9RU repeat
+  steps:
+    - action: utter_q9RU
+    - intent: repeat
+    - action: utter_sureRepRU
+    - action: utter_q9RU
+
+- rule: utter_q9KZ repeat
+  steps:
+    - action: utter_q9KZ
+    - intent: repeat
+    - action: utter_sureRepKZ
+    - action: utter_q9KZ
+
+
+- rule: utter_q9RU soundlessly
+  steps:
+    - action: utter_q9RU
+    - intent: soundlessly
+    - action: action_soundlesslyRU
+
+- rule: utter_q9KZ soundlessly
+  steps:
+    - action: utter_q9KZ
+    - intent: soundlessly
+    - action: action_soundlesslyKZ
+
+- rule: utter_q9RU robot
+  steps:
+    - action: utter_q9RU
+    - intent: robot
+    - action: action_robot
+
+
+- rule: utter_q9KZ robot
+  steps:
+    - action: utter_q9KZ
+    - intent: robot
+    - action: action_robot
+
+
+- rule: utter_q9RU whoIsIt
+  steps:
+    - action: utter_q9RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q9RU
+
+- rule: utter_q9KZ whoIsIt
+  steps:
+    - action: utter_q9KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q9KZ
+
+- rule: utter_q9RU operator
+  steps:
+    - action: utter_q9RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q9KZ operator
+  steps:
+    - action: utter_q9KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q9RU yes
+  steps:
+    - action: utter_q9RU
+    - intent: yes
+    - action: utter_investBoughtHelpRU
+    - action: utter_q2RU
+
+- rule: utter_q9KZ yes
+  steps:
+    - action: utter_q9KZ
+    - intent: yes
+    - action: utter_investBoughtHelpKZ
+    - action: utter_q2KZ
+
+- rule: utter_q9RU no
+  steps:
+    - action: utter_q9RU
+    - intent: no
+    - action: utter_understoodRU
+    - action: utter_q2RU
+
+- rule: utter_q9KZ no
+  steps:
+    - action: utter_q9KZ
+    - intent: no
+    - action: utter_understoodKZ
+    - action: utter_q2KZ
+
+- rule: utter_q9RU idk
+  steps:
+    - action: utter_q9RU
+    - intent: idk
+    - action: action_another_operator
+
+- rule: utter_q9KZ idk
+  steps:
+    - action: utter_q9KZ
+    - intent: idk
+    - action: action_another_operator
+
+- rule: utter_q9RU interrupting
+  steps:
+    - action: utter_q9RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q9KZ interrupting
+  steps:
+    - action: utter_q9KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+
+- rule: utter_q9RU haveQuestion
+  steps:
+    - action: utter_q9RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q9KZ haveQuestion
+  steps:
+    - action: utter_q9KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: waitRU
+  steps:
+    - action: utter_q9RU
+    - intent: wait
+    - action: utter_okWaitRU
+    - action: utter_q9RU
+
+- rule: waitKZ
+  steps:
+    - action: utter_q9KZ
+    - intent: wait
+    - action: utter_okWaitKZ
+    - action: utter_q9KZ
+# question 10 starts
+- rule: utter_q10RU switch
+  steps:
+    - action: utter_q10RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q10KZ switch
+  steps:
+    - action: utter_q10KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q10RU
+  steps:
+    - action: utter_q10RU
+    - or:
+      - intent: langDetectRU
+      - intent: changeLangRU
+      - intent: langDetectKZ
+      - intent: stockNoView
+      - intent: investNoOpen
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: score
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: another
+    - action: action_counterRU
+
+- rule: utter_q10KZ
+  steps:
+    - action: utter_q10KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: stockNoView
+      - intent: investNoOpen
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: score
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: another
+    - action:  action_counterRU
+
+
+- rule: utter_q10RU change lang to KZ
+  steps:
+    - action: utter_q10RU
+    - intent: changeLangKZ
+    - action: action_changelang
+
+- rule: utter_q10KZ change lang to RU
+  steps:
+    - action: utter_q10KZ
+    - intent: changeLangRU
+    - action: action_changelang
+
+
+- rule: utter_q10RU repeat
+  steps:
+    - action: utter_q10RU
+    - intent: repeat
+    - action: utter_sureRepRU
+    - action: utter_q10RU
+
+- rule: utter_q10KZ repeat
+  steps:
+    - action: utter_q10KZ
+    - intent: repeat
+    - action: utter_sureRepKZ
+    - action: utter_q10KZ
+
+
+- rule: utter_q10RU soundlessly
+  steps:
+    - action: utter_q10RU
+    - intent: soundlessly
+    - action: action_soundlesslyRU
+
+- rule: utter_q10KZ soundlessly
+  steps:
+    - action: utter_q10KZ
+    - intent: soundlessly
+    - action: action_soundlesslyKZ
+
+- rule: utter_q10RU robot
+  steps:
+    - action: utter_q10RU
+    - intent: robot
+    - action: action_robot
+
+
+- rule: utter_q10KZ robot
+  steps:
+    - action: utter_q10KZ
+    - intent: robot
+    - action: action_robot
+
+
+- rule: utter_q10RU whoIsIt
+  steps:
+    - action: utter_q10RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q10RU
+
+- rule: utter_q10KZ whoIsIt
+  steps:
+    - action: utter_q10KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q10KZ
+
+
+- rule: utter_q10RU operator
+  steps:
+    - action: utter_q10RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q10KZ operator
+  steps:
+    - action: utter_q10KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q10RU yes
+  steps:
+    - action: utter_q10RU
+    - intent: yes
+    - action: utter_investStaticHelpRU
+    - action: utter_q2RU
+
+- rule: utter_q10KZ yes
+  steps:
+    - action: utter_q10KZ
+    - intent: yes
+    - action: utter_investStaticHelpKZ
+    - action: utter_q2KZ
+
+- rule: utter_q10RU no
+  steps:
+    - action: utter_q10RU
+    - intent: no
+    - action: utter_understoodRU
+    - action: utter_q2RU
+
+- rule: utter_q10KZ no
+  steps:
+    - action: utter_q10KZ
+    - intent: no
+    - action: utter_understoodKZ
+    - action: utter_q2KZ
+
+- rule: utter_q10RU idk
+  steps:
+    - action: utter_q10RU
+    - intent: idk
+    - action: action_another_operator
+
+- rule: utter_q10KZ idk
+  steps:
+    - action: utter_q10KZ
+    - intent: idk
+    - action: action_another_operator
+
+- rule: utter_q10KZ interrupting
+  steps:
+    - action: utter_q10KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+
+- rule: utter_q10RU haveQuestion
+  steps:
+    - action: utter_q10RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q10KZ haveQuestion
+  steps:
+    - action: utter_q10KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: waitRU
+  steps:
+    - action: utter_q10RU
+    - intent: wait
+    - action: utter_okWaitRU
+    - action: utter_q10RU
+
+- rule: waitKZ
+  steps:
+    - action: utter_q10KZ
+    - intent: wait
+    - action: utter_okWaitKZ
+    - action: utter_q10KZ
+# question 11 starts
+- rule: utter_q11RU switch
+  steps:
+    - action: utter_q11RU
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q11KZ switch
+  steps:
+    - action: utter_q11KZ
+    - or:
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: remove_the_limit
+      - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: utter_q11RU
+  steps:
+    - action: utter_q11RU
+    - or:
+      - intent: langDetectRU
+      - intent: changeLangRU
+      - intent: langDetectKZ
+      - intent: stockNoView
+      - intent: investNoOpen
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: score
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: another
+    - action: action_counterRU
+
+- rule: utter_q11KZ
+  steps:
+    - action: utter_q11KZ
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: stockNoView
+      - intent: investNoOpen
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: freeMoneyAct
+      - intent: score
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: another
+    - action:  action_counterRU
+
+
+- rule: utter_q11RU change lang to KZ
+  steps:
+    - action: utter_q11RU
+    - intent: changeLangKZ
+    - action: action_changelang
+
+- rule: utter_q11KZ change lang to RU
+  steps:
+    - action: utter_q11KZ
+    - intent: changeLangRU
+    - action: action_changelang
+
+
+- rule: utter_q11RU repeat
+  steps:
+    - action: utter_q11RU
+    - intent: repeat
+    - action: utter_sureRepRU
+    - action: utter_q11RU
+
+- rule: utter_q11KZ repeat
+  steps:
+    - action: utter_q11KZ
+    - intent: repeat
+    - action: utter_sureRepKZ
+    - action: utter_q11KZ
+
+
+- rule: utter_q11RU soundlessly
+  steps:
+    - action: utter_q11RU
+    - intent: soundlessly
+    - action: action_soundlesslyRU
+
+- rule: utter_q11KZ soundlessly
+  steps:
+    - action: utter_q10KZ
+    - intent: soundlessly
+    - action: action_soundlesslyKZ
+
+- rule: utter_q11RU robot
+  steps:
+    - action: utter_q11RU
+    - intent: robot
+    - action: action_robot
+
+
+- rule: utter_q11KZ robot
+  steps:
+    - action: utter_q11KZ
+    - intent: robot
+    - action: action_robot
+
+
+- rule: utter_q11RU whoIsIt
+  steps:
+    - action: utter_q11RU
+    - intent: whoIsIt
+    - action: utter_langDetectRU
+    - action: utter_q11RU
+
+- rule: utter_q11KZ whoIsIt
+  steps:
+    - action: utter_q11KZ
+    - intent: whoIsIt
+    - action: utter_langDetectKZ
+    - action: utter_q11KZ
+
+- rule: utter_q11RU operator
+  steps:
+    - action: utter_q11RU
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q11KZ operator
+  steps:
+    - action: utter_q11KZ
+    - intent: operator
+    - action: action_operator
+
+- rule: utter_q11RU yes
+  steps:
+    - action: utter_q11RU
+    - intent: yes
+    - action: utter_investMoneyHelpRU
+    - action: utter_q2RU
+
+- rule: utter_q11KZ yes
+  steps:
+    - action: utter_q11KZ
+    - intent: yes
+    - action: utter_investMoneyHelpKZ
+    - action: utter_q2KZ
+
+- rule: utter_q11RU no
+  steps:
+    - action: utter_q11RU
+    - intent: no
+    - action: utter_understoodRU
+    - action: utter_q2RU
+
+- rule: utter_q11KZ no
+  steps:
+    - action: utter_q11KZ
+    - intent: no
+    - action: utter_understoodKZ
+    - action: utter_q2KZ
+
+- rule: utter_q11RU idk
+  steps:
+    - action: utter_q11RU
+    - intent: idk
+    - action: action_another_operator
+
+- rule: utter_q11KZ idk
+  steps:
+    - action: utter_q11KZ
+    - intent: idk
+    - action: action_another_operator
+
+- rule: utter_q11RU interrupting
+  steps:
+    - action: utter_q11RU
+    - intent: interrupting
+    - action: utter_interruptingRU
+
+- rule: utter_q11KZ interrupting
+  steps:
+    - action: utter_q11KZ
+    - intent: interrupting
+    - action: utter_interruptingKZ
+
+- rule: utter_q11RU haveQuestion
+  steps:
+    - action: utter_q11RU
+    - intent: haveQuestion
+    - action: utter_q7RU
+
+- rule: utter_q11KZ haveQuestion
+  steps:
+    - action: utter_q11KZ
+    - intent: haveQuestion
+    - action: utter_q7KZ
+
+- rule: waitRU
+  steps:
+    - action: utter_q11RU
+    - intent: wait
+    - action: utter_okWaitRU
+    - action: utter_q11RU
+
+- rule: waitKZ
+  steps:
+    - action: utter_q11KZ
+    - intent: wait
+    - action: utter_okWaitKZ
+    - action: utter_q11KZ
+
+#after utter_getCSIRU
+
+
+- rule: utter_getCSIRU change lang to KZ
+  steps:
+    - action: utter_getCSIRU
+    - intent: changeLangKZ
+    - action: utter_getCSIKZ
+
+- rule: utter_getCSIKZ change lang to RU
+  steps:
+    - action: utter_getCSIKZ
+    - intent: changeLangRU
+    - action: utter_getCSIRU
+
+- rule: utter_getCSIRU out_of_scope
+  steps:
+    - action: utter_getCSIRU
+    - or:
+      - intent: repeat
+      - intent: soundlessly
+      - intent: yes
+      - intent: no
+      - intent: whoIsIt
+      - intent: robot
+      - intent: operator
+      - intent: haveQuestion
+      - intent: idk
+      - intent: score
+      - intent: investNoOpen
+      - intent: wait
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: stockNoView
+      - intent: freeMoneyAct
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: another
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: remove_the_limit
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: registration
+    - action: action_score
+
+- rule: utter_getCSIKZ out_of_scope
+  steps:
+    - action: utter_getCSIKZ
+    - or:
+      - intent: repeat
+      - intent: soundlessly
+      - intent: yes
+      - intent: no
+      - intent: whoIsIt
+      - intent: robot
+      - intent: operator
+      - intent: haveQuestion
+      - intent: idk
+      - intent: score
+      - intent: investNoOpen
+      - intent: wait
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: stockNoView
+      - intent: freeMoneyAct
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangKZ
+      - intent: another
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: remove_the_limit
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: registration
+    - action: action_score
+
+# interrupting
+
+- rule: switch
+  steps:
+    - action: utter_interruptingRU
+    - or:
+        - intent: loans_mortgage
+        - intent: limits
+        - intent: forgot_card
+        - intent: reset_pin
+        - intent: card_operation
+        - intent: current_loan
+        - intent: card_delivery
+        - intent: credit_card
+        - intent: new_loan
+        - intent: block_card
+        - intent: overdue_debt
+        - intent: sysn
+        - intent: super_app
+        - intent: kino_kz
+        - intent: payments_and_transfers
+        - intent: halyk_travel
+        - intent: addresses_branches
+        - intent: remove_the_limit
+        - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: switch
+  steps:
+    - action: utter_interruptingKZ
+    - or:
+        - intent: loans_mortgage
+        - intent: limits
+        - intent: forgot_card
+        - intent: reset_pin
+        - intent: card_operation
+        - intent: current_loan
+        - intent: card_delivery
+        - intent: credit_card
+        - intent: new_loan
+        - intent: block_card
+        - intent: overdue_debt
+        - intent: sysn
+        - intent: super_app
+        - intent: kino_kz
+        - intent: payments_and_transfers
+        - intent: halyk_travel
+        - intent: addresses_branches
+        - intent: remove_the_limit
+        - intent: registration
+    - action: action_switchToAnotherScript
+
+- rule: interruptingRU another
+  steps:
+    - action: utter_interruptingRU
+    - intent: another
+    - action: action_another_operator
+
+- rule: interruptingKZ another
+  steps:
+    - action: utter_interruptingKZ
+    - intent: another
+    - action: action_another_operator
+
+- rule: utter_interruptingRU
+  steps:
+    - action: utter_interruptingRU
+    - or:
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: repeat
+      - intent: soundlessly
+      - intent: yes
+      - intent: no
+      - intent: whoIsIt
+      - intent: robot
+      - intent: operator
+      - intent: haveQuestion
+      - intent: idk
+      - intent: score
+      - intent: investNoOpen
+      - intent: wait
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: stockNoView
+      - intent: freeMoneyAct
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: langDetectRU
+      - intent: langDetectKZ
+    - action: utter_q1RU
+
+- rule: utter_interruptingKZ
+  steps:
+    - action: utter_interruptingKZ
+    - or:
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: repeat
+      - intent: soundlessly
+      - intent: yes
+      - intent: no
+      - intent: whoIsIt
+      - intent: robot
+      - intent: operator
+      - intent: haveQuestion
+      - intent: idk
+      - intent: score
+      - intent: investNoOpen
+      - intent: wait
+      - intent: stockAnalystAct
+      - intent: bagQues
+      - intent: stockNoView
+      - intent: freeMoneyAct
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: langDetectRU
+      - intent: langDetectKZ
+    - action: utter_q1KZ
+
+#utter_repeat_question
+- rule: utter_repeat_questionRU
+  steps:
+    - action: utter_repeat_questionRU
+    - or:
+        - intent: langDetectRU
+        - intent: langDetectKZ
+        - intent: changeLangRU
+        - intent: changeLangKZ
+        - intent: whoIsIt
+        - intent: robot
+        - intent: soundlessly
+        - intent: operator
+        - intent: interrupting
+        - intent: yes
+        - intent: no
+        - intent: repeat
+        - intent: idk
+        - intent: score
+        - intent: investNoOpen
+        - intent: stockAnalystAct
+        - intent: bagQues
+        - intent: stockNoView
+        - intent: freeMoneyAct
+        - intent: out_of_scope
+        - intent: nlu_fallback
+        - intent: haveQuestion
+        - intent: wait
+        - intent: loans_mortgage
+        - intent: limits
+        - intent: remove_the_limit
+        - intent: forgot_card
+        - intent: reset_pin
+        - intent: card_operation
+        - intent: current_loan
+        - intent: card_delivery
+        - intent: credit_card
+        - intent: new_loan
+        - intent: block_card
+        - intent: overdue_debt
+        - intent: sysn
+        - intent: super_app
+        - intent: kino_kz
+        - intent: payments_and_transfers
+        - intent: halyk_travel
+        - intent: addresses_branches
+        - intent: registration
+        - intent: another
+    - action: action_q1
+
+- rule: utter_repeat_questionKZ
+  steps:
+    - action: utter_repeat_questionKZ
+    - or:
+        - intent: langDetectRU
+        - intent: langDetectKZ
+        - intent: changeLangRU
+        - intent: changeLangKZ
+        - intent: whoIsIt
+        - intent: robot
+        - intent: soundlessly
+        - intent: operator
+        - intent: interrupting
+        - intent: yes
+        - intent: no
+        - intent: repeat
+        - intent: idk
+        - intent: score
+        - intent: investNoOpen
+        - intent: stockAnalystAct
+        - intent: bagQues
+        - intent: stockNoView
+        - intent: freeMoneyAct
+        - intent: out_of_scope
+        - intent: nlu_fallback
+        - intent: haveQuestion
+        - intent: wait
+        - intent: loans_mortgage
+        - intent: limits
+        - intent: remove_the_limit
+        - intent: forgot_card
+        - intent: reset_pin
+        - intent: card_operation
+        - intent: current_loan
+        - intent: card_delivery
+        - intent: credit_card
+        - intent: new_loan
+        - intent: block_card
+        - intent: overdue_debt
+        - intent: sysn
+        - intent: super_app
+        - intent: kino_kz
+        - intent: payments_and_transfers
+        - intent: halyk_travel
+        - intent: addresses_branches
+        - intent: registration
+        - intent: another
+    - action: action_q1

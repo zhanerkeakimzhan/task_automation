@@ -1,0 +1,39 @@
+tracker_store:
+  type: mongod
+  url: mongodb://mongo:mongo_password@10.23.69.16:27017
+  db: halyk_bank_brokerage
+  username: mongo
+  password: mongo_password
+  auth_source: admin
+
+lock_store:
+    type: redis
+    url: 10.23.69.16
+    port: 6379
+    db: 2
+
+action_endpoint:
+  url: "http://halyk_bank_brokerage_actions:5017/webhook"
+
+engine_redis:
+    type: engine_redis
+    url: 10.23.69.16
+    port: 6379
+    db: 0
+    pass: ''
+
+event_broker:
+  type: SQL
+  dialect: sqlite
+  db: events.db
+
+# tracker_store:
+#   type: sql
+#   dialect: "sqlite"
+#   url: "sqlite:///events.db"
+
+# action_endpoint:
+#   url: "http://localhost:5055/webhook"
+
+
+

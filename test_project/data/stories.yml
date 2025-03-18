@@ -1,0 +1,49 @@
+version: "3.1"
+stories:
+
+# question 0 starts
+
+- story: story for q0 and q1
+  steps:
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: interrupting
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: idk
+      - intent: bagQues
+      - intent: stockNoView
+      - intent: freeMoneyAct
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: haveQuestion
+      - intent: wait
+      - intent: loans_mortgage
+      - intent: limits
+      - intent: remove_the_limit
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: super_app
+      - intent: kino_kz
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: registration
+      - intent: another
+    - action: action_q1
