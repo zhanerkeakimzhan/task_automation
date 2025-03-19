@@ -182,6 +182,7 @@ async def process_audio_files(spreadsheet_id, range_name, original_filename, use
     
     folder_path = os.path.dirname(original_filename)
     print(folder_path)
+    print(zip_filename)
     
     zip_filepath = os.path.join(folder_path, zip_filename)
 
@@ -213,6 +214,7 @@ def audio_processing(original_filename, user_language, sheet_name, spreadsheet_i
     print(f"Автоматически определён диапазон: {range_name}")
     
     result = asyncio.run(process_audio_files(spreadsheet_id=spreadsheet_id, range_name=range_name, original_filename=original_filename, user_language=user_language))
+    print(original_filename)
     print(result)
     return result
 
