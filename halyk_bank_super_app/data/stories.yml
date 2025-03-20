@@ -1,0 +1,76 @@
+version: "3.1"
+
+stories:
+
+- story: all to action
+  steps:
+    - or:
+      - intent: langDetectRU
+      - intent: langDetectKZ
+      - intent: changeLangRU
+      - intent: changeLangKZ
+      - intent: yes
+      - intent: no
+      - intent: repeat
+      - intent: whoIsIt
+      - intent: robot
+      - intent: soundlessly
+      - intent: operator
+      - intent: haveQuestion
+      - intent: dontKnow
+      - intent: callBack
+      - intent: whatIsTrustNumber
+      - intent: later
+      - intent: bankBrunch
+      - intent: brunchAddress
+      - intent: wait
+      - intent: busy
+      - intent: internet
+      - intent: knowHow
+      - intent: howOpenCard
+      - intent: howCloseCard
+      - intent: howReissueCard
+      - intent: howMakeRefund
+      - intent: publicServices
+      - intent: needPlasticCard
+      - intent: specialCard
+      - intent: waysCloseCard
+      - intent: haveMoney
+      - intent: arestLimits
+      - intent: justUnlock
+      - intent: willCardStayWithMe
+      - intent: callCenter
+      - intent: whyRefused
+      - intent: whenApprovalCome
+      - intent: logInWithTrustedNumber
+      - intent: cashLoan
+      - intent: commodityLoan
+      - intent: bothLoans
+      - intent: dontKnowTypeLoan
+      - intent: returnedTheProduct
+      - intent: interrupting
+      - intent: out_of_scope
+      - intent: nlu_fallback
+      - intent: loans_mortgage
+      - intent: remove_the_limit
+      - intent: limits
+      - intent: forgot_card
+      - intent: reset_pin
+      - intent: card_operation
+      - intent: current_loan
+      - intent: card_delivery
+      - intent: credit_card
+      - intent: new_loan
+      - intent: block_card
+      - intent: overdue_debt
+      - intent: sysn
+      - intent: kino_kz
+      - intent: registration
+      - intent: payments_and_transfers
+      - intent: halyk_travel
+      - intent: addresses_branches
+      - intent: brokerage
+      - intent: another
+    - action: action_info
+    - action: action_slotSet
+    - action: action_q0

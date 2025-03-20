@@ -1,0 +1,29 @@
+# tracker_store:
+#   type: mongod
+#   url: mongodb://mongo:mongo_password@mongodb:27017
+#   db: halyk_bank_super_app
+#   username: mongo
+#   password: mongo_password
+#   auth_source: admin
+
+# action_endpoint:
+#   url: "http://halyk_bank_super_app_actions:5017/webhook"
+
+# lock_store:
+#     type: redis
+#     url: redis
+#     port: 6379
+#     db: 0
+
+# event_broker:
+#   type: SQL
+#   dialect: sqlite
+#   db: events.db
+
+tracker_store:
+  type: sql
+  dialect: "sqlite"
+  url: "sqlite:///events.db"
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"

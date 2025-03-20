@@ -28,6 +28,7 @@ def home():
 def submit():
     global csvInput
     global testListInput
+    global audioProcessingInput
     data = request.get_json()
 
     selected_ids = data.get('selected', [])
@@ -96,13 +97,15 @@ def download_excel():
 #обработка аудио
 @app.route('/download_zip', methods=['GET'])
 def download_zip():
-    global wav_path
-    folder_path = os.path.dirname(file_path)
-    print(folder_path)
+    global file_path
+    global audioProcessingInput
 
-    zip_path = f'{folder_path}/{audioProcessingInput}'
+    print(audioProcessingInput)
+
+    zip_path = f'{file_path}/{audioProcessingInput}.zip'
+    print("zip_path", zip_path)
     
-    return send_file(zip_path, as_attachment=True, download_name="archive.zip", mimetype="application/zip")
+    return send_file(zip_path, as_attachment=True, download_name=f"{audioProcessingInput}.zip", mimetype="application/zip")
 
 
 @app.route('/delete_folder', methods=['POST'])

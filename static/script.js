@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
             modalContent.innerHTML = "<p>Выберите хотя бы один вариант!</p>";
         } else if (hasAudioProcessing){
             modalContent.innerHTML = "<h2>Теперь нужно заполнить некоторые данные!🤓🥹</h2>";
+            modalContent.innerHTML += "<h5>(или вы можете отправить в <a href='https://t.me/mak_audio_bot'>Telegram-бот</a>)</h5>";
             modalContent.innerHTML += `<div class="input-container">
                                             <h4>Выберите WAV файл:</h4>
                                             <label for="wavInput" class="custom-file-button">Выбрать файл</label>
@@ -170,14 +171,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             modalContent.innerHTML += `<div>
                 <div class="lang-container">
-                    <h4>Выберите пол робота:</h4>
+                    <h4>Выберите язык обработки:</h4>
                     <button class='lang-button' data-lang='KZ'>Каз</button>
                     <button class='lang-button' data-lang='RU'>Рус</button>
                 </div>
 
                 <div class="input-container">
                     <h4>Введите название листа предзаписи:</h4>
-                    <input type='text' id='modalAudioProcessingInput' placeholder="что-бы взять название из этого листа">
+                    <input type='text' id='modalAudioProcessingInput' placeholder="что-бы взять название аудио из этого листа">
                 </div>
 
             </div>`;
@@ -536,6 +537,39 @@ function continueSubmit(selectedIds, csvInput, testListInput){
                 } else if (key == "audioProcessing"){
                     title.innerText = "Обработка аудио:";
                     section.appendChild(title);
+
+                    // fetch("/download_zip")
+                    //     .then(response => {
+                    //         if (!response.ok) {
+                    //             throw new Error("Ошибка при скачивании файла");
+                    //         }
+                
+                    //         // Получаем заголовок Content-Disposition
+                    //         const contentDisposition = response.headers.get("Content-Disposition");
+                    //         let filename = "download.zip"; // Значение по умолчанию
+                
+                    //         if (contentDisposition) {
+                    //             // Исправленный парсер для имен с _ или пробелами
+                    //             const match = contentDisposition.match(/filename="?([^"]+)"?/);
+                    //             if (match && match[1]) {
+                    //                 filename = match[1].trim(); // Убираем пробелы и сохраняем имя
+                    //             }
+                    //         }
+                
+                    //         return response.blob().then(blob => ({ blob, filename }));
+                    //     })
+                    //     .then(({ blob, filename }) => {
+                    //         const link = document.createElement("a");
+                    //         const url = URL.createObjectURL(blob);
+                    //         link.href = url;
+                    //         link.download = filename; // Скачивание с правильным именем
+                    //         document.body.appendChild(link);
+                    //         link.click();
+                    //         document.body.removeChild(link);
+                    //         URL.revokeObjectURL(url);
+                    //     })
+                    //     .catch(error => console.error("Ошибка загрузки:", error));
+
                 } else if (key == "preRecording"){
                     title.innerText = "Создание таблицы предзаписи:";
                     section.appendChild(title);

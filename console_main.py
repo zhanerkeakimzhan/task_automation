@@ -178,7 +178,8 @@ async def process_audio_files(spreadsheet_id, range_name, original_filename, use
                 break  # Выход из цикла после удаления строки
 
     # Создаем ZIP-файл с архивированием всех файлов из папки
-    zip_filename = f"{range_name}.zip"
+    zip_name = range_name.split("!")[0]
+    zip_filename = f"{zip_name}.zip"
     
     folder_path = os.path.dirname(original_filename)
     print(folder_path)
